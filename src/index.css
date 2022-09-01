@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --black-gradient: linear-gradient(
+    144.39deg,
+    #ffffff -278.56%,
+    #6d6d6d -78.47%,
+    #11101d 91.61%
+  );
+
+  --coffee-gradient: linear-gradient(
+    30deg, rgba(67,15,0,1) 7%, rgba(64,23,12,0.8520542005864846) 37%, rgba(74,35,26,0.6951914554884453) 73%, rgba(95,55,45,0.4010738084296218) 100%
+  );
+
+  --card-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
+}
+.bg-black-gradient {
+  background: linear-gradient(
+    144.39deg,
+    #ffffff -278.56%,
+    #6d6d6d -78.47%,
+    #11101d 91.61%
+  );
+}
+
+.feature-card:hover {
+  background: var(--coffee-gradient);
+  box-shadow: var(--card-shadow);
+}
+  
+body *::-webkit-scrollbar {
+  width: 6px;
+}
+body *::-webkit-scrollbar-thumb {
+  background-color: rgb(216, 216, 216);
+  border-radius: 40px;
+}
+body *::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+body * {
+  scrollbar-width: thin;
+}
