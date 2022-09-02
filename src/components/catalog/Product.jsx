@@ -3,13 +3,35 @@ import { useParams } from 'react-router-dom';
 import styles from '../../style';
 import { storefront, productQuery } from '../../utils';
 import SEO from 'react-seo-component';
-import { Keyboard, Zoom, Navigation, Pagination, A11y } from 'swiper';
+import { Keyboard, Zoom, Navigation, Pagination } from 'swiper';
 import {Swiper, SwiperSlide} from 'swiper/react';
+import {ImSpinner9} from 'react-icons/im'
+import {BsWhatsapp} from 'react-icons/bs'
+import {AiOutlineArrowDown} from 'react-icons/ai'
+import {buy} from '../../constants'
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/zoom';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+
+const Accordion = ({title, content, id, checked}) => {
+  
+  const [open, setOpen] = useState(false); 
+
+  return (
+    <label htmlFor={id}>
+      <div className="overflow-hidden text-white cursor-pointer font-poppins">
+        <input type="checkbox" className='absolute opacity-0 peer' id={id} checked={checked ? !open : open} onClick={() => setOpen((prev) => !prev)}/>
+        <p className='flex-1 py-5 inline-block uppercase font-semibold'>{title}</p>
+        <AiOutlineArrowDown className="inline-block text-[24px] transition-all translate-y-[100%] float-right peer-checked:rotate-180" />
+        <div className=' max-h-0 peer-checked:max-h-screen border-t-2'>
+          <p className='py-2 px-3 cursor-normal text-[14px] leading-[25px]'>{content}</p>
+        </div>
+      </div>
+    </label>
+  )
+}
 
 const Product = () => {
 
@@ -49,17 +71,22 @@ const Product = () => {
               >
                 {product.media.nodes.map((variant) => (
                   <SwiperSlide>
-                    <div className="swiper-zoom-container">
+                    <div key={variant.id} className="swiper-zoom-container">
                       <img src={variant.image.url} alt="" className='mx-auto object-cover'/>
                     </div>
                   </SwiperSlide>
                 ))}
               </Swiper>
             </div>
-            <div className='md:w-[40%] max-h-[100%] lg:hover:overflow-auto lg:overflow-hidden overflow-auto pr-7'>
-                <h1 className='font-poppins font-semibold text-3xl text-white'>{product.title}</h1>
-                {/* <a href="https://api.whatsapp.com/send/?phone=573202871949&text=Hola,+Soy+Alejandro+Mira&type=phone_number&app_absent=0" target="_blank">Ir a whatsapp</a> */}
-                <div className="text-white font-poppins mt-5" dangerouslySetInnerHTML={{ __html: product.descriptionHtml}}/>
+            <div className='md:w-[40%] max-h-[100%] flex flex-col items-center sm:items-start md:pr-7'>
+                <h1 className='font-poppins font-semibold text-3xl text-white uppercase text-center sm:text-start'>{product.title}</h1>
+                <h3 className='font-poppins font-semibold text-lg text-dimWhite uppercase'>{product.vendor}</h3>
+                <a className='sm:w-[100%] w-[80%] text-center bg-[#1e9c4c] hover:bg-[#17773a] transition-all duration-300 py-4 flex justify-center items-center gap-2 text-white text-[18px] uppercase font-poppins mt-4' href={`https://api.whatsapp.com/send/?phone=${buy.phone}&text=${buy.message}${product.title.replaceAll(" ", "+")}&type=phone_number&app_absent=0`} target="_blank"><BsWhatsapp className='text-[24px]'/> Ir a whatsapp</a>
+                <div className='my-5 sm:w-[100%] w-[80%] '>
+                  <Accordion title="Descripcion" content={product.description} checked={true}/>
+                  <Accordion title="Envios" content={buy.send}/>
+                  <Accordion title="Calidad" content={buy.quality}/>
+                </div>
             </div>
         </div>
         <SEO
@@ -75,7 +102,7 @@ const Product = () => {
         />
         </div>
       ) : (
-        <h1 className='font-poppins font-semibold text-3xl text-white text-center'>No se encontraron resultados</h1>
+        <div className="text-white h-[65vh] flex justify-center items-center"><ImSpinner9 className='animate-spin text-4xl'/></div>
       )}
     </div>
   )

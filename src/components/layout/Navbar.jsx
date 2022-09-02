@@ -12,11 +12,13 @@ const Navbar = () => {
   const {setSidebar} = useStateContext();
 
   return (
-    <header className='w-full h-[100px] bg-secondary/[.85] backdrop-blur-lg sticky top-0 z-[6] sm:px-16 px-6 py-4  flex justify-between items-center'>
+    <header className={`w-full h-[100px] bg-secondary/[.85] backdrop-blur-lg sticky top-0 z-[6] ${styles.paddingX} py-4  flex justify-between items-center`}>
       <div className={`${styles.boxWidth} relative z-[2] flex items-center justify-between`}>
         <div className='flex items-center'>
-          <Link to="/"><img src={logo} alt="Logo" className='w-[65px] rounded-full object-contain'/></Link>
-          <h1 className='sm:text-4xl text-xl ml-4 font-poppins text-white font-semibold'>Rancho Guadalupe</h1>
+          <Link to="/" className='flex items-center'>
+            <img src={logo} alt="Logo" className='w-[65px] rounded-full object-contain'/>
+            <h1 className='sm:text-4xl text-xl ml-4 font-poppins text-white font-semibold'>Rancho Guadalupe</h1>
+          </Link>
         </div>
         <ul className='md:flex gap-6 align-center hidden'>
           {navLinks.map((list) => (

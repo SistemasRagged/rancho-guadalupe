@@ -41,11 +41,10 @@ const Products = () => {
         {products.map((product, index) => (
           <Link to={`${product.node.handle}`}  key={index} className="my-4 sm:my-2">
             <div className="overflow-hidden w-[100%] h-[100%]">
-              <img src={product.node.images.edges[0].node.transformedSrc} alt="" className='w-[100%] h-[100%] object-cover overflow-hidden hover:scale-105 transition-all duration-500' />
+              <img src={product.node.images.edges[0].node.transformedSrc} alt="" className='w-[100%] h-[100%] object-cover overflow-hidden hover:opacity-60 transition-all duration-500' />
             </div>
             <div>
-              <h2 className="text-white text-normal font-poppins">{product.node.title}</h2>
-              <p className="text-white text-normal font-poppins">{product.node.description}</p>
+              <h2 className="text-white font-poppins uppercase">{product.node.title}</h2>
             </div>
           </Link>
         ))}

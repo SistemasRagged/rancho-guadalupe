@@ -45,3 +45,39 @@ body *::-webkit-scrollbar-track {
 body * {
   scrollbar-width: thin;
 }
+
+.accordion {
+  width: 100%;
+}
+
+.accordion .contentBx {
+  position: relative;
+  margin: 10px 0px;
+}
+
+.accordion .contentBx .label {
+  position: relative;
+  padding: 10px;
+  background: #2694af;
+  color: #fff;
+  cursor: pointer;
+}
+
+.accordion .contentBx .label::before {
+  content: '+';
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 1.5em;
+}
+
+.accordion .contentBx .content {
+  position: relative;
+  padding: 10px;
+  background: #fff;
+  height: 0;
+  overflow: hidden;
+  transition: opacity .5s ease;
+  opacity: 0;
+}

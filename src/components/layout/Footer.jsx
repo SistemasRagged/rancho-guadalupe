@@ -4,7 +4,8 @@ import logo from '../../assets/logo.png'
 import { footerLinks, socialMedia } from '../../constants'
 
 const Footer = () => (
-  <footer className={`${styles.flexCenter} ${styles.paddingY} bg-darkPrimary px-16 xl:px-0 flex-col ${styles.boxWidth}`}>
+  <footer className={`${styles.flexCenter} ${styles.paddingY} bg-darkPrimary ${styles.paddingX} flex-col`}>
+    <div className={styles.boxWidth}>
     <div className={`${styles.flexCenter} md:flex-row flex-col mb-8 w-full`}>
       <div className="flex-1 flex flex-col justify-start mr-10">
         <img src={logo} alt="hooBank" className="w-[150px] h-[150px] rounded-full object-contain" />
@@ -50,6 +51,8 @@ const Footer = () => (
         ))}
       </div>
     </div>
+    </div>
+
   </footer>
 )
 

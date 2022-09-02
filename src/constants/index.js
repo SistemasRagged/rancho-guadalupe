@@ -126,7 +126,9 @@ export const features = [
   },
 ];
 
-export const description = {
+export const buy = {
   send:"Reglas sobre el envio y bla bla bla",
-  quality:"Regals sobre la calidad y bla bla bla",
-}
+  quality:"Reglas sobre la calidad y bla bla bla",
+  phone:"573202871949",
+  message: "👋🏻+Hola+Rancho+Guadalupe,+estoy+interesado+en+saber+más+acerca+de+este+producto:+"
+};
