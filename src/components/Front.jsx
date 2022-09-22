@@ -11,7 +11,7 @@ const Front = () => {
         <div className={styles.paddingY} id="features">
           <Features />
         </div>
-        <AboutUs />
+        {/* <AboutUs /> */}
         <SEO
           title='Inicio'
           titleTemplate='Rancho Guadalupe'

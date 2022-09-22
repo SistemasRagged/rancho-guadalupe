@@ -1,26 +1,35 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import styles from '../../style'
 import { storefront,productsQuery, search } from '../../utils'
 import SEO from 'react-seo-component';
 import { FaSearch } from 'react-icons/fa'
+import { ImSpinner9 } from 'react-icons/im'
 
 const Products = () => {
 
   const [products, setProducts] = useState([]);
   const [prodsSearch, setProdsSearch] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  const query = new URLSearchParams(useLocation().search);
+  const productId = query.get('product');
 
   const getProducts = async () => {
+    setLoading(true);
     const {data} =  await storefront(productsQuery, {first: 50});
     setProducts(data.products.edges);
     setProdsSearch(data.products.edges);
     console.log(data.products.edges[0].node.variants.nodes[0]);  
+    setLoading(false);
+    if (productId !== null) {
+      document.getElementById(productId).scrollIntoView();
+    }
   }
 
   useEffect(() => {
     getProducts();
   }, [])
-
 
   return (
     <div id="products" className={`${styles.boxWidth} ${styles.padding} xl:px-0`}>
@@ -39,7 +48,7 @@ const Products = () => {
       </div>
       <div className="my-6 grid grid-cols-1 gap-y-10 gap-x-6 ss:grid-cols-2 md:grid-cols-3 xl:gap-x-8">
         {products.map((product, index) => (
-          <Link to={`${product.node.handle}`}  key={index} className="my-4 sm:my-2">
+          <Link to={product.node.handle} id={product.node.handle} key={index} className="my-4 sm:my-2">
             <div className="overflow-hidden w-[100%] h-[100%]">
               <img src={product.node.images.edges[0].node.transformedSrc} alt="" className='w-[100%] h-[100%] object-cover overflow-hidden hover:opacity-60 transition-all duration-500' />
             </div>
@@ -49,6 +58,7 @@ const Products = () => {
           </Link>
         ))}
       </div>
+      {loading && <div className="text-white h-[45vh] mx-auto flex justify-center animate-spin items-center"><ImSpinner9 className='animate-spin text-4xl'/></div>}
       <SEO
           title='Productos'
           titleTemplate='Rancho Guadalupe'

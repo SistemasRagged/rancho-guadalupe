@@ -4,6 +4,7 @@ export {default as Layout} from './Layout';
 export {default as Navbar} from './layout/Navbar';
 export {default as Sidebar} from './layout/Sidebar';
 export {default as Footer} from './layout/Footer';
+export {default as NotFound} from './layout/NotFound';
 
 //* Home or Front
 

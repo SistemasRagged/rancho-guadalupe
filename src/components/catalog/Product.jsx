@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import styles from '../../style';
 import { storefront, productQuery } from '../../utils';
 import SEO from 'react-seo-component';
 import { Keyboard, Zoom, Navigation, Pagination } from 'swiper';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {ImSpinner9} from 'react-icons/im'
-import {BsWhatsapp} from 'react-icons/bs'
+import {BsWhatsapp, BsFillArrowLeftCircleFill} from 'react-icons/bs'
 import {AiOutlineArrowDown} from 'react-icons/ai'
 import {buy} from '../../constants'
 import 'swiper/css';
@@ -81,7 +81,10 @@ const Product = () => {
             <div className='md:w-[40%] max-h-[100%] flex flex-col items-center sm:items-start md:pr-7'>
                 <h1 className='font-poppins font-semibold text-3xl text-white uppercase text-center sm:text-start'>{product.title}</h1>
                 <h3 className='font-poppins font-semibold text-lg text-dimWhite uppercase'>{product.vendor}</h3>
-                <a className='sm:w-[100%] w-[80%] text-center bg-[#1e9c4c] hover:bg-[#17773a] transition-all duration-300 py-4 flex justify-center items-center gap-2 text-white text-[18px] uppercase font-poppins mt-4' href={`https://api.whatsapp.com/send/?phone=${buy.phone}&text=${buy.message}${product.title.replaceAll(" ", "+")}&type=phone_number&app_absent=0`} target="_blank"><BsWhatsapp className='text-[24px]'/> Ir a whatsapp</a>
+                <div id="links" className="flex items-center gap-3 w-[100%] mt-4">
+                  <a className='w-[90%] text-center bg-[#1e9c4c] hover:bg-[#17773a] transition-all duration-300 py-4 flex justify-center items-center gap-2 text-white text-[18px] uppercase font-poppins' href={`https://api.whatsapp.com/send/?phone=${buy.phone}&text=${buy.message}${product.title.replaceAll(" ", "+")}&type=phone_number&app_absent=0`} target="_blank"><BsWhatsapp className='text-[24px]'/> Ir a whatsapp</a>
+                  <Link title="Volver" className='w-[10%] text-center text-[#ffffff] hover:text-[#c4c4c4] transition-all duration-300 py-4 flex justify-center items-center gap-2 text-[18px] uppercase font-poppins' to={`/productos?product=${handle}`}><BsFillArrowLeftCircleFill className='text-[24px]'/></Link>
+                </div>
                 <div className='my-5 sm:w-[100%] w-[80%] '>
                   <Accordion title="Descripcion" content={product.description} checked={true}/>
                   <Accordion title="Envios" content={buy.send}/>

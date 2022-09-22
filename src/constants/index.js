@@ -8,14 +8,14 @@ export const navLinks = [
     },
     {
       id:'products',
-      link:'/products',
+      link:'/productos',
       title:'Productos',
     },
-    {
-      id:'cart',
-      link:'/cart',
-      title:'Carrito',
-    },
+    // {
+    //   id:'cart',
+    //   link:'/cart',
+    //   title:'Carrito',
+    // },
 ]
 
 export const footerLinks = [
