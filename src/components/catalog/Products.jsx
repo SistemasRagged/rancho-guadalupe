@@ -13,7 +13,6 @@ const Products = () => {
   const [loading, setLoading] = useState(false);
 
   const query = new URLSearchParams(useLocation().search);
-  const productId = query.get('product');
 
   const getProducts = async () => {
     setLoading(true);
@@ -22,6 +21,7 @@ const Products = () => {
     setProdsSearch(data.products.edges);
     console.log(data.products.edges[0].node.variants.nodes[0]);  
     setLoading(false);
+    const productId = query.get('product');
     if (productId !== null) {
       document.getElementById(productId).scrollIntoView();
     }

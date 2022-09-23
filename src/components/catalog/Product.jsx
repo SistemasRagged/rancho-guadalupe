@@ -22,7 +22,7 @@ const Accordion = ({title, content, id, checked}) => {
   return (
     <label htmlFor={id}>
       <div className="overflow-hidden text-white cursor-pointer font-poppins">
-        <input type="checkbox" className='absolute opacity-0 peer' id={id} checked={checked ? !open : open} onClick={() => setOpen((prev) => !prev)}/>
+        <input type="checkbox" className='absolute opacity-0 peer' id={id} defaultChecked={checked ? !open : open} onClick={() => setOpen((prev) => !prev)}/>
         <p className='flex-1 py-5 inline-block uppercase font-semibold'>{title}</p>
         <AiOutlineArrowDown className="inline-block text-[24px] transition-all translate-y-[100%] float-right peer-checked:rotate-180" />
         <div className=' max-h-0 peer-checked:max-h-screen border-t-2'>
@@ -70,8 +70,8 @@ const Product = () => {
                 className="mySwiper"
               >
                 {product.media.nodes.map((variant) => (
-                  <SwiperSlide>
-                    <div key={variant.id} className="swiper-zoom-container">
+                  <SwiperSlide key={variant.id}>
+                    <div className="swiper-zoom-container">
                       <img src={variant.image.url} alt="" className='mx-auto object-cover'/>
                     </div>
                   </SwiperSlide>
