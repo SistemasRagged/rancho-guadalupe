@@ -1,12 +1,13 @@
 import React from 'react'
 import SEO from 'react-seo-component'
 import styles from '../style'
-import {Hero, Features, AboutUs} from './index'
+import {Banners, Hero, Features} from './index'
 
 const Front = () => {
 
   return (
     <div>
+        <Banners />
         <Hero />
         <div className={styles.paddingY} id="features">
           <Features />

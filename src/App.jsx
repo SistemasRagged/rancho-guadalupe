@@ -5,7 +5,7 @@ import {Layout, Front, Products, Product, Cart, NotFound} from './components/ind
 const App = () => {
 
   return (
-    <div className='bg-primary w-full font-poppins' onLoad={() => window.scrollTo(0, 0)}>
+    <div className='bg-white w-full font-poppins' onLoad={() => window.scrollTo(0, 0)}>
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Layout />} >

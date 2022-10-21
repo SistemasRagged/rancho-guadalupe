@@ -10,12 +10,51 @@ export const navLinks = [
       id:'products',
       link:'/productos',
       title:'Productos',
+      categories: [
+        {
+          id:'toros',
+          link:'/toros',
+          categorie:'Toros'
+        },
+        {
+          id:'Donadoras',
+          link:'/donadoras',
+          categorie:'Donadoras'
+        },
+        {
+          id:'toretes',
+          link:'/toretes',
+          categorie:'Toretes'
+        },
+        {
+          id:'novillas',
+          link:'/novillas',
+          categorie:'Novillas'
+        },
+      ]
     },
-    // {
-    //   id:'cart',
-    //   link:'/cart',
-    //   title:'Carrito',
-    // },
+    {
+      id:'cart',
+      link:'/',
+      title:'Link #3',
+      categories: [
+        {
+          id:'toros',
+          link:'/toros',
+          categorie:'Submenu'
+        },
+        {
+          id:'Donadoras',
+          link:'/donadoras',
+          categorie:'Submenu'
+        },
+      ]
+    },
+    {
+      id:'cart',
+      link:'/',
+      title:'Link #4',
+    }
 ]
 
 export const footerLinks = [

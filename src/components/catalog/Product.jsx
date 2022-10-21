@@ -21,11 +21,11 @@ const Accordion = ({title, content, id, checked}) => {
 
   return (
     <label htmlFor={id}>
-      <div className="overflow-hidden text-white cursor-pointer font-poppins">
+      <div className="overflow-hidden cursor-pointer font-poppins">
         <input type="checkbox" className='absolute opacity-0 peer' id={id} defaultChecked={checked ? !open : open} onClick={() => setOpen((prev) => !prev)}/>
-        <p className='flex-1 py-5 inline-block uppercase font-semibold'>{title}</p>
-        <AiOutlineArrowDown className="inline-block text-[24px] transition-all translate-y-[100%] float-right peer-checked:rotate-180" />
-        <div className=' max-h-0 peer-checked:max-h-screen border-t-2'>
+        <h1 className='flex-1 text-primary py-5 inline-block uppercase font-semibold'>{title}</h1>
+        <AiOutlineArrowDown className="text-primary inline-block text-[24px] transition-all translate-y-[100%] float-right peer-checked:rotate-180" />
+        <div className=' max-h-0 peer-checked:max-h-screen border-t-2 border-t-primary/20'>
           <p className='py-2 px-3 cursor-normal text-[14px] leading-[25px]'>{content}</p>
         </div>
       </div>
@@ -79,11 +79,11 @@ const Product = () => {
               </Swiper>
             </div>
             <div className='md:w-[40%] max-h-[100%] flex flex-col items-center sm:items-start md:pr-7'>
-                <h1 className='font-poppins font-semibold text-3xl text-white uppercase text-center sm:text-start'>{product.title}</h1>
-                <h3 className='font-poppins font-semibold text-lg text-dimWhite uppercase'>{product.vendor}</h3>
+                <h1 className='font-poppins font-semibold text-3xl text-primary brightness-75 uppercase text-center sm:text-start'>{product.title}</h1>
+                <h3 className='font-poppins font-semibold text-lg text-primary/80 brightness-50 uppercase'>{product.vendor}</h3>
                 <div id="links" className="flex items-center gap-3 w-[100%] mt-4">
                   <a className='w-[90%] text-center bg-[#1e9c4c] hover:bg-[#17773a] transition-all duration-300 py-4 flex justify-center items-center gap-2 text-white text-[18px] uppercase font-poppins' href={`https://api.whatsapp.com/send/?phone=${buy.phone}&text=${buy.message}${product.title.replaceAll(" ", "+")}&type=phone_number&app_absent=0`} target="_blank"><BsWhatsapp className='text-[24px]'/> Ir a whatsapp</a>
-                  <Link title="Volver" className='w-[10%] text-center text-[#ffffff] hover:text-[#c4c4c4] transition-all duration-300 py-4 flex justify-center items-center gap-2 text-[18px] uppercase font-poppins' to={`/productos?product=${handle}`}><BsFillArrowLeftCircleFill className='text-[24px]'/></Link>
+                  <Link title="Volver" className='w-[10%] text-center text-secondary hover:brightness-90 transition-all duration-300 py-4 flex justify-center items-center gap-2 text-[18px] uppercase font-poppins' to={`/productos?product=${handle}`}><BsFillArrowLeftCircleFill className='text-[24px]'/></Link>
                 </div>
                 <div className='my-5 sm:w-[100%] w-[80%] '>
                   <Accordion title="Descripcion" content={product.description} checked={true}/>

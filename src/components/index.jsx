@@ -10,6 +10,7 @@ export {default as NotFound} from './layout/NotFound';
 
 export {default as Front} from './Front';
 export {default as Hero} from './home/Hero';
+export {default as Banners} from './home/Banners';
 export {default as Features} from './home/Features';
 export {default as AboutUs} from './home/AboutUs';
 

@@ -12,9 +12,7 @@
     #11101d 91.61%
   );
 
-  --coffee-gradient: linear-gradient(
-    30deg, rgba(67,15,0,1) 7%, rgba(64,23,12,0.8520542005864846) 37%, rgba(74,35,26,0.6951914554884453) 73%, rgba(95,55,45,0.4010738084296218) 100%
-  );
+  --coffee-gradient: linear-gradient(30deg, rgba(205,155,72,0.6082632882254464) 20%, rgba(194,153,88,0.22170866637670694) 100%);
 
   --card-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
 }
@@ -44,40 +42,4 @@ body *::-webkit-scrollbar-track {
 }
 body * {
   scrollbar-width: thin;
-}
-
-.accordion {
-  width: 100%;
-}
-
-.accordion .contentBx {
-  position: relative;
-  margin: 10px 0px;
-}
-
-.accordion .contentBx .label {
-  position: relative;
-  padding: 10px;
-  background: #2694af;
-  color: #fff;
-  cursor: pointer;
-}
-
-.accordion .contentBx .label::before {
-  content: '+';
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-  font-size: 1.5em;
-}
-
-.accordion .contentBx .content {
-  position: relative;
-  padding: 10px;
-  background: #fff;
-  height: 0;
-  overflow: hidden;
-  transition: opacity .5s ease;
-  opacity: 0;
 }

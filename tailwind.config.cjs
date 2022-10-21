@@ -5,8 +5,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#220700",
-        secondary: "#801a00",
+        primary: "#5F0010",
+        secondary: "#C7923A",
         darkPrimary: "#0e0301",
         dimWhite: "rgba(255, 255, 255, 0.7)",
       },
@@ -23,10 +23,15 @@ module.exports = {
       xl: "1700px",
     },
     animation: {
+      'fadeIn': 'fadeIn 500ms ease-out',
       'slide': 'slideIn 700ms ease-out',
       'spin': 'spin 1s linear infinite'
     },
     keyframes: {
+      fadeIn: {
+        '0%': {opacity: 0},
+        '100%': {opacity: 1},
+      },
       slideIn: {
         '0%': {transform: "translateX(-50%)"},
         '100%': {transform: "translateX(0%)" },

@@ -7,9 +7,9 @@ const Footer = () => (
   <footer className={`${styles.flexCenter} ${styles.paddingY} bg-darkPrimary ${styles.paddingX} flex-col`}>
     <div className={styles.boxWidth}>
     <div className={`${styles.flexCenter} md:flex-row flex-col mb-8 w-full`}>
-      <div className="flex-1 flex flex-col justify-start mr-10">
+      <div className="flex-1 flex flex-row md:flex-col gap-10 md:gap-0 justify-start mr-10">
         <img src={logo} alt="hooBank" className="w-[150px] h-[150px] rounded-full object-contain" />
-        <p className={`${styles.paragraph} mt-4 max-w-[310px]`}>Exercitation pariatur labore nisi proident sunt non irure est dolore mollit.</p>
+        <p className={`${styles.paragraph} text-dimWhite mt-4 max-w-[310px]`}>Exercitation pariatur labore nisi proident sunt non irure est dolore mollit.</p>
       </div>
 
       <div className="flex-[1.5] w-full flex flex-row justify-center xs:justify-between flex-wrap md:mt-0 mt-10">
