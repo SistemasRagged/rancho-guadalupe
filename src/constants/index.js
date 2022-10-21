@@ -52,7 +52,7 @@ export const navLinks = [
     },
     {
       id:'cart',
-      link:'/',
+      link:'/productos',
       title:'Link #4',
     }
 ]
