@@ -1,4 +1,4 @@
-import { instagram, facebook, youtube, star, shield, send } from '../assets/index'
+import { instagram, facebook, youtube, star, shield, send, banner1, banner2, banner3, banner4 } from '../assets/index'
 
 export const navLinks = [
     {
@@ -14,29 +14,39 @@ export const navLinks = [
         {
           id:'toros',
           link:'/toros',
-          categorie:'Toros'
+          categorie:'Toros Brahman'
+        },
+        {
+          id:'toros',
+          link:'/toros',
+          categorie:'Toros Gyr'
         },
         {
           id:'Donadoras',
           link:'/donadoras',
-          categorie:'Donadoras'
+          categorie:'Hembras Brahman'
+        },
+        {
+          id:'Donadoras',
+          link:'/donadoras',
+          categorie:'Hembras Gyr'
         },
         {
           id:'toretes',
           link:'/toretes',
-          categorie:'Toretes'
+          categorie:'Embriones'
         },
         {
           id:'novillas',
           link:'/novillas',
-          categorie:'Novillas'
+          categorie:'Semen'
         },
       ]
     },
     {
       id:'cart',
       link:'/',
-      title:'Link #3',
+      title:'Menu',
       categories: [
         {
           id:'toros',
@@ -51,11 +61,41 @@ export const navLinks = [
       ]
     },
     {
+      id:'aboutus',
+      link:'/nosotros',
+      title:'Quienes Somos',
+    },
+    {
+      id:'ubicacion',
+      link:'/ubicacion',
+      title:'Ubicación',
+    },
+    {
       id:'cart',
-      link:'/productos',
-      title:'Link #4',
+      link:'/feriasyeventos',
+      title:'Ferias y eventos',
     }
 ]
+
+export const banners = [
+   {
+    id: 1, 
+    image: banner1
+  }, 
+  {
+    id: 2,
+    image: banner2
+  }, 
+  {
+    id: 3,
+    image: banner3
+  }, 
+  {
+    id: 4,
+    image: banner4
+  } 
+]
+
 
 export const footerLinks = [
   {

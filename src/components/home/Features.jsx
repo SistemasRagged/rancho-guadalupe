@@ -9,10 +9,10 @@ const FeatureCard = ({icon, title, content, index}) => (
       <img src={icon} alt="Icon" className="w-[50%] h-[50%] object-contain"/>
     </div>
     <div className="flex-1 flex flex-col ml-3">
-      <h4 className="font-poppins font-semibold text-primary text-[18px] leading-[23px] mb-1">
+      <h4 className="font-primary font-semibold text-primary text-[18px] leading-[23px] mb-1">
         {title}
       </h4>
-      <p className="font-poppins font-normal text-[16px] leading-[24px] mb-1">
+      <p className="font-primary font-normal text-[16px] leading-[24px] mb-1">
         {content}
       </p>
     </div>
@@ -20,7 +20,7 @@ const FeatureCard = ({icon, title, content, index}) => (
 )
 
 const Features = () => (
-  <section className={`${styles.boxWidth} ${styles.padding} flex flex-col md:flex-row xl:px-0`}>
+  <section className={`${styles.boxWidth} ${styles.padding} ${styles.paddingY} flex flex-col md:flex-row xl:px-0`} id="features">
     <div className={layout.sectionInfo}>
       <h2 className={styles.heading2}>Lorem ipmsum, <br className="sm:block hidden"/> pariatur labore proident.</h2>
       <p className={`${styles.paragraph} max-w-[470px] mt-5`}>Adipisicing ut quis ex incididunt id laborum laborum labore id sit occaecat. Esse in esse sint tempor. Laboris irure do excepteur nostrud eu id.</p>

@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/logo.png';
+import {logo} from '../../assets/index';
 import { navLinks } from '../../constants';
-import { BsBag } from 'react-icons/bs'
 import { IoIosArrowDown } from 'react-icons/io'
 import { HiMenu } from 'react-icons/hi';
 import { useStateContext } from '../../contexts/ContextApp';
@@ -30,7 +29,7 @@ const MenuLinks = ({link}) => {
           <ul className='absolute top-[100%] left-0 w-full shadow-2xl'>
             {link.categories.map(categorie => (
               <li id={categorie.id}>
-                <Link to={categorie.link} className="block px-6 py-3 w-full bg-orange-300 hover:brightness-90">{categorie.categorie}</Link>
+                <Link to={categorie.link} className="block text-center px-2 py-3 w-full bg-orange-300 hover:brightness-90">{categorie.categorie}</Link>
               </li>
             ))}
           </ul>
@@ -51,7 +50,7 @@ const Navbar = () => {
         <div className='flex items-center'>
           <Link to="/" className='flex items-center'>
             <img src={logo} alt="Logo" className='w-[65px] rounded-full object-contain'/>
-            <h1 className='sm:text-4xl text-xl ml-4 font-poppins text-white font-semibold'>Rancho Guadalupe</h1>
+            <h1 className='sm:text-4xl text-xl ml-4 font-primary text-white font-semibold'>Rancho Guadalupe</h1>
           </Link>
         </div>
 

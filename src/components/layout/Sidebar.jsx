@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useStateContext } from '../../contexts/ContextApp';
-import logo from '../../assets/logo.png'
+import {logo} from '../../assets/index'
 import {MdOutlineClose} from 'react-icons/md'
-import { BsBag } from 'react-icons/bs'
 import { navLinks } from '../../constants';
 import { Link } from 'react-router-dom';
 import { IoIosArrowDown } from 'react-icons/io';
@@ -50,7 +49,7 @@ const Sidebar = () => {
   const {sidebar, setSidebar} = useStateContext();
 
   return (
-    <div className={`w-screen md:hidden block sm:w-[500px] transition-all duration-700 bg-secondary h-screen fixed top-0 shadow-2xl z-[10] ${sidebar ? 'translate-x-[0]' : '-translate-x-[100%]'}`}>
+    <aside className={`w-screen md:hidden block sm:w-[500px] transition-all duration-700 bg-secondary h-screen fixed top-0 shadow-2xl z-[10] ${sidebar ? 'translate-x-[0]' : '-translate-x-[100%]'}`}>
       <div className='relative z-[2] bg-primary h-screen overflow-auto'>
         <div className='px-4 py-6 flex justify-between items-center'>
           <img src={logo} alt="Logo"  className='w-[50px] rounded-full object-contain'/>
@@ -65,7 +64,7 @@ const Sidebar = () => {
         </div>
       </div>
       <div onClick={() => setSidebar(prev => !prev)} className={`w-screen h-screen absolute top-0 z-[1] animate-slide bg-black/50 opacity-100 ${sidebar ? 'block' : 'hidden'}`} />
-    </div>
+    </aside>
   )
 }
 

@@ -34,11 +34,11 @@ const Products = () => {
   return (
     <div id="products" className={`${styles.boxWidth} ${styles.padding} xl:px-0`}>
       <div className='flex flex-col sm:flex-row justify-between items-center pt-4 sm:pt-0 pb-4'>
-        <h1 className=" text-3xl sm:text-4xl font-semibold font-poppins pb-2 sm:pb-0">Productos <small className='text-[15px] sm:text-[20px]'>( {products.length} productos )</small></h1>
+        <h1 className=" text-3xl sm:text-4xl font-semibold font-primary pb-2 sm:pb-0">Productos <small className='text-[15px] sm:text-[20px]'>( {products.length} productos )</small></h1>
         <div className='relative w-[300px]'>
           <input 
             type="text" 
-            className='focus:outline focus:outline-dimWhite focus:outline-offset-4 font-poppins p-2 text-primary text-lg bg-transparent border-b-2 border-b-secondary w-[100%]'
+            className='focus:outline focus:outline-dimWhite focus:outline-offset-4 font-primary p-2 text-primary text-lg bg-transparent border-b-2 border-b-secondary w-[100%]'
             placeholder="Buscar..."
             onChange={(e) => {
               setProducts(search(prodsSearch, e.target.value))
@@ -54,7 +54,7 @@ const Products = () => {
               <img src={product.node.images.edges[0].node.transformedSrc} alt="" className='w-[100%] h-[100%] object-contain overflow-hidden hover:opacity-60 transition-all duration-500' />
             </div>
             <div>
-              <h2 className="text-primary font-semibold font-poppins uppercase">{product.node.title}</h2>
+              <h2 className="text-primary font-semibold font-primary uppercase">{product.node.title}</h2>
             </div>
           </Link>
         ))}

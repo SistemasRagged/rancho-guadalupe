@@ -2,11 +2,6 @@ import { createContext, useContext, useState } from "react";
 
 const StateContext = createContext();
 
-const initialState = {
-    sidebar: false,
-    cart: false
-}
-
 export const ContextApp = ({ children }) => {
 
     const [sidebar, setSidebar] = useState(false);

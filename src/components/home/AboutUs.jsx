@@ -1,8 +1,11 @@
 import React from 'react'
+import styles from '../../style'
 
 const AboutUs = () => {
   return (
-    <div>AboutUs</div>
+    <main id="aboutus" className={styles.boxWidth}>
+      Sobre nosotros
+    </main>
   )
 }
 

@@ -1,8 +1,8 @@
 const styles = {
     boxWidth: "xl:max-w-[1400px] max-w-[1150px] w-full m-auto",
   
-    heading2: "font-poppins font-semibold xs:text-[48px] text-[40px] text-primary xs:leading-[76.8px] leading-[66.8px] w-full",
-    paragraph: "font-poppins font-normal text-[18px] leading-[30.8px]",
+    heading2: "font-primary font-semibold xs:text-[48px] text-[40px] text-primary xs:leading-[76.8px] leading-[66.8px] w-full",
+    paragraph: "font-primary font-normal text-[18px] leading-[30.8px]",
   
     flexCenter: "flex justify-center items-center",
     flexStart: "flex justify-center items-start",
@@ -14,7 +14,6 @@ const styles = {
     marginX: "sm:mx-16 mx-6",
     marginY: "sm:my-16 my-6",
     hoverLink: "hover:after:content-[''] hover:after:w-full hover:after:absolute hover:after:left-0 hover:after:bottom-0 after:transition-all hover:after:h-[5px] hover:after:bg-primary hover:after:scaleY-[2]",
-    bannerItem: 'h-[80vh] flex items-center justify-center bg-secondary/50'
   };
   
   export const layout = {

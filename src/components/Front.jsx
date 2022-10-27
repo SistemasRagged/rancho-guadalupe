@@ -9,9 +9,7 @@ const Front = () => {
     <div>
         <Banners />
         <Hero />
-        <div className={styles.paddingY} id="features">
-          <Features />
-        </div>
+        <Features />
         {/* <AboutUs /> */}
         <SEO
           title='Inicio'

@@ -11,7 +11,8 @@ module.exports = {
         dimWhite: "rgba(255, 255, 255, 0.7)",
       },
       fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
+        // poppins: ["Poppins", "sans-serif"],
+        primary: ["Oswald", "sans-serif"],
       },
     },
     screens: {

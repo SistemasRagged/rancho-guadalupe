@@ -5,12 +5,12 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import styles from '../../style'
-
-const banners = [ {id: 1,}, {id: 2,}, {id: 3,}, {id: 4,} ]
+import {banners} from '../../constants/index'
+import { FaSpinner } from 'react-icons/fa';
 
 const Banners = () => {
   return (
-    <section id="banners" className={`${styles.boxWidth} xl:px-0 px-6 my-6`}>
+    <section id="banners" className={`${styles.boxWidth} xl:px-0 px-6 my-6 h-[100vh]`}>
         <Swiper
             style={{ "--swiper-navigation-color": "#5F0010", "--swiper-pagination-color": "#5F0010"}}
             modules={[Navigation, Pagination, Autoplay]}
@@ -27,9 +27,10 @@ const Banners = () => {
             {banners.map(banner => (
                 <SwiperSlide 
                     key={banner.id}
-                    className={styles.bannerItem}
+                    className="h-[95vh] flex items-center justify-center"
                 >
-                    {`Swiper ${banner.id}`}
+                    <div className='absolute text-[3em] animate-spin text-primary'><FaSpinner /></div>
+                    <img src={banner.image} alt="" className="w-full h-full object-cover relative z-[2]" />
                 </SwiperSlide>
             ))}
         </Swiper>
