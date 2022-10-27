@@ -30,7 +30,7 @@ const Banners = () => {
                     className="h-[95vh] flex items-center justify-center"
                 >
                     <div className='absolute text-[3em] animate-spin text-primary'><FaSpinner /></div>
-                    <img src={banner.image} alt="" className="w-full h-full object-cover relative z-[2]" />
+                    <img src={banner.image && banner.image} alt="" className="w-full h-full object-cover relative z-[2]" />
                 </SwiperSlide>
             ))}
         </Swiper>

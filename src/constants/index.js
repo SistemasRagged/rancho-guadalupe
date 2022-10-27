@@ -1,4 +1,4 @@
-import { instagram, facebook, youtube, star, shield, send, banner1, banner2, banner3, banner4 } from '../assets/index'
+import { instagram, facebook, youtube, star, shield, send, banner1, banner2 } from '../assets/index'
 
 export const navLinks = [
     {
@@ -88,11 +88,9 @@ export const banners = [
   }, 
   {
     id: 3,
-    image: banner3
   }, 
   {
     id: 4,
-    image: banner4
   } 
 ]
 
