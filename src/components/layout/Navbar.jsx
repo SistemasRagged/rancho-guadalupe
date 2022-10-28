@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {logo} from '../../assets/index';
+import {logoWhite} from '../../assets/index';
 import { navLinks } from '../../constants';
 import { IoIosArrowDown } from 'react-icons/io'
 import { HiMenu } from 'react-icons/hi';
@@ -49,7 +49,7 @@ const Navbar = () => {
       <main className={`${styles.boxWidth} relative z-[2] flex items-center justify-between`}>
         <div className='flex items-center'>
           <Link to="/" className='flex items-center'>
-            <img src={logo} alt="Logo" className='w-[65px] rounded-full object-contain'/>
+            <img src={logoWhite} alt="Logo" className='w-[100px] object-contain'/>
             <h1 className='sm:text-4xl text-xl ml-4 font-primary text-white font-semibold'>Rancho Guadalupe</h1>
           </Link>
         </div>

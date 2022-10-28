@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from '../../style'
-import {logo} from '../../assets/index'
+import {logoWhite} from '../../assets/index'
 import { footerLinks, socialMedia } from '../../constants'
 
 const Footer = () => (
@@ -8,7 +8,7 @@ const Footer = () => (
     <div className={styles.boxWidth}>
     <div className={`${styles.flexCenter} md:flex-row flex-col mb-8 w-full`}>
       <div className="flex-1 flex flex-row md:flex-col gap-10 md:gap-0 justify-start mr-10">
-        <img src={logo} alt="hooBank" className="w-[150px] h-[150px] rounded-full object-contain" />
+        <img src={logoWhite} alt="hooBank" className="w-[150px] h-[150px] object-contain" />
         <p className={`${styles.paragraph} text-dimWhite mt-4 max-w-[310px]`}>Exercitation pariatur labore nisi proident sunt non irure est dolore mollit.</p>
       </div>
 

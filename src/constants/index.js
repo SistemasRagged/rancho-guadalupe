@@ -1,4 +1,4 @@
-import { instagram, facebook, youtube, star, shield, send, banner1, banner2 } from '../assets/index'
+import { instagram, facebook, youtube, star, shield, send } from '../assets/index'
 
 export const navLinks = [
     {
@@ -76,24 +76,6 @@ export const navLinks = [
       title:'Ferias y eventos',
     }
 ]
-
-export const banners = [
-   {
-    id: 1, 
-    image: banner1
-  }, 
-  {
-    id: 2,
-    image: banner2
-  }, 
-  {
-    id: 3,
-  }, 
-  {
-    id: 4,
-  } 
-]
-
 
 export const footerLinks = [
   {

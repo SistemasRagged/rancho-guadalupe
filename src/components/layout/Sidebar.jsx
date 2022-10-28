@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useStateContext } from '../../contexts/ContextApp';
-import {logo} from '../../assets/index'
+import {logoWhite} from '../../assets/index'
 import {MdOutlineClose} from 'react-icons/md'
 import { navLinks } from '../../constants';
 import { Link } from 'react-router-dom';
@@ -51,8 +51,8 @@ const Sidebar = () => {
   return (
     <aside className={`w-screen md:hidden block sm:w-[500px] transition-all duration-700 bg-secondary h-screen fixed top-0 shadow-2xl z-[10] ${sidebar ? 'translate-x-[0]' : '-translate-x-[100%]'}`}>
       <div className='relative z-[2] bg-primary h-screen overflow-auto'>
-        <div className='px-4 py-6 flex justify-between items-center'>
-          <img src={logo} alt="Logo"  className='w-[50px] rounded-full object-contain'/>
+        <div className='px-4 py-6 flex justify-between items-center flex-row-reverse'>
+          {/* <img src={logoWhite} alt="Logo"  className='w-[100px] object-contain'/> */}
           <span className='text-[50px] text-white' onClick={() => setSidebar((prev) => !prev)}><MdOutlineClose /></span>
         </div>
         <div className='mt-5'>

@@ -3,7 +3,7 @@ import styles from '../../style'
 import {AiOutlineArrowDown} from 'react-icons/ai'
 
 const SeeMore = () => (
-  <a href="#features" className={`${styles.flexCenter} w-[140px] h-[140px] rounded-full bg-primary p-[2px] cursor-pointer`}>
+  <a href="#features" className={`${styles.flexCenter} w-[140px] h-[140px] rounded-full bg-primary p-[2px] cursor-pointer hidden md:block`}>
     <div className={`${styles.flexCenter} flex-col gap-2 text-white transition-colors hover:brightness-90 duration-300 bg-primary w-[100%] h-[100%] rounded-full`}>
       <p className="font-primary font-medium text-[18px] leading-[23px]">
         Ver más

@@ -42,7 +42,6 @@ const Product = () => {
   const getProduct = async () => {
     const {data} =  await storefront(productQuery, {handle});
     setProduct(data.product);
-    console.log(data.product);  
   }
 
   useEffect(() => {
