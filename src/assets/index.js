@@ -10,3 +10,6 @@ export {default as shield} from './features/shield.svg';
 
 //*** CARPETA DEL LOGO ***/
 export {default as logoWhite} from './logo/logowhite.png'
+
+//*** CARPETA SOBRE NOSOTROS ***//
+export {default as aboutUs} from './aboutus/banner.jpg'
