@@ -14,7 +14,7 @@ const MenuLinks = ({link}) => {
 
   return (
     <li 
-      id={link.id} 
+      key={link.id} 
       className={`relative px-6 py-3 ${styles.hoverLink}`}
       onMouseEnter={() => setSubmenuActive(true)} 
       onMouseLeave={() => setSubmenuActive(false)}
@@ -28,7 +28,7 @@ const MenuLinks = ({link}) => {
         {submenuActive && link.categories && 
           <ul className='absolute top-[100%] left-0 w-full shadow-2xl'>
             {link.categories.map(categorie => (
-              <li id={categorie.id}>
+              <li key={categorie.id}>
                 <Link to={categorie.link} className="block text-center px-2 py-3 w-full bg-orange-300 hover:brightness-90">{categorie.categorie}</Link>
               </li>
             ))}

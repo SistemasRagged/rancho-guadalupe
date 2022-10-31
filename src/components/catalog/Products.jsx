@@ -19,7 +19,7 @@ const Products = () => {
     const {data} =  await storefront(productsQuery, {first: 50});
     setProducts(data.products.edges);
     setProdsSearch(data.products.edges);
-    console.log(data.products.edges[0].node.variants.nodes[0]);  
+    console.log(data.products.edges);  
     setLoading(false);
     const productId = query.get('product');
     if (productId !== null) {

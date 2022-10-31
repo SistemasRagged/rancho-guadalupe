@@ -12,54 +12,54 @@ export const navLinks = [
       title:'Productos',
       categories: [
         {
-          id:'toros',
-          link:'/toros',
+          id:'toros-brahman',
+          link:'/categoria/reproductores',
           categorie:'Toros Brahman'
         },
         {
-          id:'toros',
-          link:'/toros',
+          id:'toros-gyr',
+          link:'/categoria/reproductores',
           categorie:'Toros Gyr'
         },
         {
-          id:'Donadoras',
-          link:'/donadoras',
+          id:'donadoras-brahman',
+          link:'/categoria/donadoras-brahman',
           categorie:'Hembras Brahman'
         },
         {
-          id:'Donadoras',
-          link:'/donadoras',
+          id:'donadoras-gyr',
+          link:'/categoria/donadoras-gyr',
           categorie:'Hembras Gyr'
         },
         {
-          id:'toretes',
-          link:'/toretes',
+          id:'embriones',
+          link:'/categoria/embriones',
           categorie:'Embriones'
         },
         {
-          id:'novillas',
-          link:'/novillas',
+          id:'semen',
+          link:'/categoria/semen',
           categorie:'Semen'
         },
       ]
     },
-    {
-      id:'cart',
-      link:'/',
-      title:'Menu',
-      categories: [
-        {
-          id:'toros',
-          link:'/toros',
-          categorie:'Submenu'
-        },
-        {
-          id:'Donadoras',
-          link:'/donadoras',
-          categorie:'Submenu'
-        },
-      ]
-    },
+    // {
+    //   id:'cart',
+    //   link:'/',
+    //   title:'Menu',
+    //   categories: [
+    //     {
+    //       id:'toros',
+    //       link:'/toros',
+    //       categorie:'Submenu'
+    //     },
+    //     {
+    //       id:'Donadoras',
+    //       link:'/donadoras',
+    //       categorie:'Submenu'
+    //     },
+    //   ]
+    // },
     {
       id:'aboutus',
       link:'/nosotros',
@@ -79,6 +79,7 @@ export const navLinks = [
 
 export const footerLinks = [
   {
+    id: 1,
     title: "Lista #1",
     links: [
       {
@@ -104,6 +105,7 @@ export const footerLinks = [
     ],
   },
   {
+    id: 2,
     title: "Lista #2",
     links: [
       {
@@ -129,6 +131,7 @@ export const footerLinks = [
     ],
   },
   {
+    id: 3,
     title: "Lista #3",
     links: [
       {

@@ -42,6 +42,7 @@ const Product = () => {
   const getProduct = async () => {
     const {data} =  await storefront(productQuery, {handle});
     setProduct(data.product);
+    console.log(data.product);
   }
 
   useEffect(() => {
@@ -66,13 +67,18 @@ const Product = () => {
                 zoom={true}
                 spaceBetween={10}
                 autoHeight={true}
-                className="mySwiper"
               >
                 {product.media.nodes.map((variant) => (
                   <SwiperSlide key={variant.id}>
-                    <div className="swiper-zoom-container">
-                      <img src={variant.image.url} alt="" className='mx-auto object-cover'/>
-                    </div>
+                    {variant.mediaContentType === 'IMAGE' ? (
+                      <div className="swiper-zoom-container">
+                        <img src={variant.image.url} alt="" className='mx-auto object-cover'/>
+                      </div>
+                    ) : (
+                      <div>
+                        <iframe src={variant.embedUrl} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{width: '100%', height: '80vh'}} ></iframe>
+                      </div>
+                    )}
                   </SwiperSlide>
                 ))}
               </Swiper>

@@ -23,5 +23,6 @@ export {default as Product} from './catalog/Product';
 
 //* Categories
 
-export {default as Reproductores} from './categories/Reproductores';
+export {default as Reproductores} from './catalog/Reproductores';
+export {default as Collection} from './catalog/Collection';
 
