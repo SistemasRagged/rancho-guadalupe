@@ -15,11 +15,11 @@ const MenuLinks = ({link}) => {
   return (
     <li 
       key={link.id} 
-      className={`relative px-6 py-3 ${styles.hoverLink}`}
+      className={`relative ${styles.hoverLink}`}
       onMouseEnter={() => setSubmenuActive(true)} 
       onMouseLeave={() => setSubmenuActive(false)}
     >
-      <Link to={!link.categories && link.link}>
+      <Link to={!link.categories && link.link} className="block px-6 py-3 ">
 
         <span className='flex items-center gap-2'>
           {link.title}{link.categories && <IoIosArrowDown className={`transition-all ${submenuActive && '-rotate-180'}`}/>}

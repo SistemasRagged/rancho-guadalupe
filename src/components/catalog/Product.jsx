@@ -75,8 +75,8 @@ const Product = () => {
                         <img src={variant.image.url} alt="" className='mx-auto object-cover'/>
                       </div>
                     ) : (
-                      <div>
-                        <iframe src={variant.embedUrl} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen style={{width: '100%', height: '80vh'}} ></iframe>
+                      <div className='h-[45vh] md:h-[80vh]'>
+                        <iframe src={variant.embedUrl} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen allowTransparency className="w-full h-[40vh] md:h-[75vh]"></iframe>
                       </div>
                     )}
                   </SwiperSlide>

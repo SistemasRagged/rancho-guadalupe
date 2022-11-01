@@ -175,9 +175,10 @@ export const collectionQuery = gql`
         nodes {
           id
           title
+          description
           publishedAt
           handle
-          variants(first: 1) {
+          variants(first: 3) {
             nodes {
               id
               image {
