@@ -7,6 +7,7 @@ import { HiMenu } from 'react-icons/hi';
 import { useStateContext } from '../../contexts/ContextApp';
 import styles from '../../style';
 import { useState } from 'react';
+import { useEffect } from 'react';
 
 const MenuLinks = ({link}) => {
 
@@ -41,7 +42,15 @@ const MenuLinks = ({link}) => {
 
 const Navbar = () => {
 
-  const {setSidebar} = useStateContext();
+  const {setSidebar, sidebar} = useStateContext();
+
+  useEffect(() => {
+    if (sidebar){
+      document.body.classList.add('overflow-y-hidden');
+    } else {
+      document.body.classList.remove('overflow-y-hidden');
+    }
+  },[sidebar])
 
   return (
   <>

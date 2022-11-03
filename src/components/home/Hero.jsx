@@ -31,7 +31,7 @@ const Hero = () => (
         </div>
 
         <div className={`flex-1 flex ${styles.flexCenter} md:my-0 my-10 relative`}>
-          <img src={"https://www.rugbyafrique.com/wp-content/uploads/2020/09/600x600-1.jpg"} alt="Billing"  className='w-[100%] xl:h-[100%] h-[90%] object-contain relative z-[5]'/>
+          <img src={"https://www.rugbyafrique.com/wp-content/uploads/2020/09/600x600-1.jpg"} alt="Billing"  className='w-[100%] xl:h-[100%] h-[90%] object-contain'/>
         </div>
 
         <div className={`ss:hidden ${styles.flexCenter}`}>
