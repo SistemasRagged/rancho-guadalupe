@@ -53,7 +53,7 @@ const Navbar = () => {
   },[sidebar])
 
   const handleScroll = () => {
-    if(window.scrollY > 300){
+    if(window.scrollY > 0){
       setScroll(true);
     } else {
       setScroll(false);
