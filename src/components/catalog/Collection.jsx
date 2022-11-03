@@ -24,9 +24,9 @@ const ZoomModal = ({status, changeStatus, img}) => {
     <div className='fixed top-0 left-0 w-screen h-screen z-[99] flex justify-center items-center'>
       <div className='bg-white/60 backdrop-blur-lg h-screen w-screen absolute top-0 left-0 z-[1]' onClick={() => closeModal()}/>
       <IoMdClose className='fixed top-0 right-0 z-[2] text-[48px] cursor-pointer' onClick={() => closeModal()}/>
-      <div className='relative z-[2] bg-white shadow-2xl rounded-lg md:max-w-[95vw] md:h-[95vh] overflow-hidden animate-fadeIn'>
+      <div className='relative z-[2] bg-transparent md:bg-white md:shadow-2xl md:rounded-lg md:max-w-[95vw] h-[80vh] md:h-[95vh] overflow-hidden animate-fadeIn'>
         <PrismaZoom>
-          <img src={img} alt="" className='md:max-w-[95vw] md:h-[95vh] object-cover' />
+          <img src={img} alt="" className='md:max-w-[95vw] h-[80vh] md:h-[95vh] object-contain md:object-cover' />
         </PrismaZoom>
       </div>
     </div>
