@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from '../../style'
 import {AiOutlineArrowDown} from 'react-icons/ai'
+import { hero } from '../../assets'
 
 const SeeMore = () => (
   <a href="#features" className={`${styles.flexCenter} w-[140px] h-[140px] rounded-full bg-primary p-[2px] cursor-pointer hidden md:block`}>
@@ -22,16 +23,16 @@ const Hero = () => (
               Lorem <br className='sm:block hidden'/> {" "}
               <span className='text-gradient'>Impsum</span> {" "}
             </h1>
-            <div className='ss:flex hidden md:mr-4 mr-0'>
+            {/* <div className='ss:flex hidden md:mr-4 mr-0'>
               <SeeMore />
-            </div>
+            </div> */}
           </div>
           <h1 className='font-primary font-semibold ss:text-[68px] text-[52px] text-black ss:leading-[100px] leading-[75px] w-full'>Dolore Consequat</h1>
           <p className={`${styles.paragraph} max-w-[470px] mt-5`}>Duis aute sit labore duis proident amet esse labore reprehenderit esse aliquip commodo ipsum proident. Culpa anim non nisi velit Lorem nisi nulla mollit laborum eu sit aliqua aliqua. Ut nostrud elit eu aute adipisicing.</p>
         </div>
 
-        <div className={`flex-1 flex ${styles.flexCenter} md:my-0 my-10 relative`}>
-          <img src={"https://www.rugbyafrique.com/wp-content/uploads/2020/09/600x600-1.jpg"} alt="Billing"  className='w-[100%] xl:h-[100%] h-[90%] object-contain'/>
+        <div className={`flex-1 flex ${styles.flexCenter} md:my-0 my-10 relative px-6 md:px-0`}>
+          <img src={hero} alt="Billing"  className='w-[100%] xl:h-[100%] h-[100%] object-contain shadow-2xl rounded-xl'/>
         </div>
 
         <div className={`ss:hidden ${styles.flexCenter}`}>

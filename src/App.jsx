@@ -4,8 +4,10 @@ import {Layout, Front, Products, Product, NotFound, AboutUs, Ubication, Events, 
 
 const App = () => {
 
+
+
   return (
-    <div className='bg-white w-full font-primary' onLoad={() => window.scrollTo(0, 0)}>
+    <div className='bg-white w-full font-primary'>
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Layout />} >

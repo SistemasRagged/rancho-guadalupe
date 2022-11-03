@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
 import {Navbar, Footer, Sidebar} from './index'
 import { BsArrowUpSquareFill } from 'react-icons/bs'
 
@@ -7,6 +7,8 @@ import { BsArrowUpSquareFill } from 'react-icons/bs'
 const Layout = () => {
 
   const [scrollUp, setScrollUp] = useState(false);
+
+  const {pathname} = useLocation();
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
@@ -17,6 +19,10 @@ const Layout = () => {
       }
     })
   }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <Fragment>

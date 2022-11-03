@@ -37,7 +37,7 @@ const Banners = () => {
                 disableOnInteraction: true,
             }}
             loop={true}
-            spaceBetween={50}
+            spaceBetween={0}
             slidesPerView={1}
             navigation
             pagination={{ clickable: true }}

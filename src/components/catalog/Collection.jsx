@@ -7,6 +7,7 @@ import { storefront, collectionQuery } from '../../utils';
 import {FaSpinner} from 'react-icons/fa'
 import {IoMdClose} from 'react-icons/io'
 import PrismaZoom from 'react-prismazoom'
+import {AiOutlineZoomIn} from 'react-icons/ai'
 
 
 const ZoomModal = ({status, changeStatus, img}) => {
@@ -58,9 +59,12 @@ const Collection = () => {
                 <div className='border-t-2'>
                   <ul>
                     {collectionShopify?.products?.nodes.map((product, index) => (
-                      <li key={product.id} className={`flex sm:justify-between border-b-2 border-b-gray-500 py-2 flex-col ${(index + 1) % 2 === 0 ? 'sm:flex-row-reverse' : 'sm:flex-row'} `}>
-                        <div>
+                      <li key={product.id} className={`flex sm:justify-between border-b-2 py-2 flex-col ${(index + 1) % 2 === 0 ? 'sm:flex-row-reverse' : 'sm:flex-row'} `}>
+                        <div className="relative">
                             <img alt={product.title} src={product.variants.nodes[0].image.url}  className='sm:max-w-[550px] m-auto cursor-zoom-in' onClick={() => {setModalZoomed(true); setImageSelected(product.variants.nodes[0].image.url)}}/>
+                            <div className={`absolute top-4 flex items-center justify-center bg-white p-2 rounded-[50%] shadow-2xl cursor-zoom-in ${(index + 1) % 2 === 0 ? 'left-4' : 'right-4'}`} onClick={() => {setModalZoomed(true); setImageSelected(product.variants.nodes[0].image.url)}}>
+                              <AiOutlineZoomIn className=" text-[28px] text-black"/>
+                            </div>
                         </div>
                         <div className={`${(index + 1) % 2 === 0 ? 'sm:pr-6' : 'sm:pl-6'} my-2 sm:my-0 w-[100%] h-[100%]`}>
                           <h1 className='text-[24px] font-secondary font-bold'>{product.title}</h1>

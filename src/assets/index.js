@@ -9,7 +9,12 @@ export {default as send} from './features/send.svg';
 export {default as shield} from './features/shield.svg';
 
 //*** CARPETA DEL LOGO ***/
-export {default as logoWhite} from './logo/logowhite.png'
+export {default as logoWhite} from './logo/logowhite.png';
 
 //*** CARPETA SOBRE NOSOTROS ***//
-export {default as aboutUs} from './aboutus/banner.jpg'
+export {default as aboutUsBanner} from './aboutus/aboutUsBanner.jpg';
+export {default as aboutUs1} from './aboutus/aboutUs1.jpg';
+export {default as aboutUs2} from './aboutus/aboutUs2.jpg';
+
+//*** CARPETA SOBRE HERO ***//
+export {default as hero} from './hero/hero.jpg';
