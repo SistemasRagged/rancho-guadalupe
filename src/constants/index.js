@@ -1,4 +1,4 @@
-import { instagram, facebook, youtube, star, shield, send } from '../assets/index'
+import { instagram, facebook, youtube, star, shield, send, tiktok } from '../assets/index'
 
 export const navLinks = [
     {
@@ -13,12 +13,12 @@ export const navLinks = [
       categories: [
         {
           id:'toros-brahman',
-          link:'/categoria/reproductores',
+          link:'/categoria/semen-reproductores',
           categorie:'Toros Brahman'
         },
         {
           id:'toros-gyr',
-          link:'/categoria/reproductores',
+          link:'/categoria/semen-reproductores',
           categorie:'Toros Gyr'
         },
         {
@@ -43,23 +43,6 @@ export const navLinks = [
         },
       ]
     },
-    // {
-    //   id:'cart',
-    //   link:'/',
-    //   title:'Menu',
-    //   categories: [
-    //     {
-    //       id:'toros',
-    //       link:'/toros',
-    //       categorie:'Submenu'
-    //     },
-    //     {
-    //       id:'Donadoras',
-    //       link:'/donadoras',
-    //       categorie:'Submenu'
-    //     },
-    //   ]
-    // },
     {
       id:'aboutus',
       link:'/nosotros',
@@ -71,9 +54,9 @@ export const navLinks = [
       title:'Ubicación',
     },
     {
-      id:'cart',
-      link:'/feriasyeventos',
-      title:'Ferias y eventos',
+      id:'eventos',
+      link:'/eventos',
+      title:'Eventos',
     }
 ]
 
@@ -162,6 +145,11 @@ export const socialMedia = [
     icon: youtube,
     link: "https://www.youtube.com/channel/UCeGbP1uGmvR5xLJPJY2BnOQ",
   },
+  {
+    id: "social-media-4",
+    icon: tiktok,
+    link: 'https://www.tiktok.com/@rancho.guadalupe'
+  }
 ];
 
 export const features = [

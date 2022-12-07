@@ -16,8 +16,7 @@ const App = () => {
             <Route exact path="/productos/:handle" element={<Product />} />
             <Route exact path="/nosotros" element={<AboutUs />} />
             <Route exact path="/ubicacion" element={<Ubication />} />
-            <Route exact path="/feriasyeventos" element={<Events />} />
-            <Route exact path="/categoria/reproductores" element={<Reproductores />}/>
+            <Route exact path="/eventos" element={<Events />} />
             <Route exact path="/categoria/:collection" element={<Collection />}/>
             <Route path="*" element={<NotFound />} />
           </Route>

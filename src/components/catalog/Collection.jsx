@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { useParams, Link} from 'react-router-dom'
@@ -8,6 +8,7 @@ import {FaSpinner} from 'react-icons/fa'
 import {IoMdClose} from 'react-icons/io'
 import PrismaZoom from 'react-prismazoom'
 import {AiOutlineZoomIn} from 'react-icons/ai'
+import SEO from 'react-seo-component';
 
 
 const ZoomModal = ({status, changeStatus, img}) => {
@@ -43,8 +44,8 @@ const Collection = () => {
 
   const getCollection = async () => {
     const { data } = await storefront(collectionQuery, {handle:collection});
-    // console.log(data.collection);
     setCollectionShopify(data.collection);
+    console.log(data.collection);
   }
 
   useEffect(() => {
@@ -59,10 +60,10 @@ const Collection = () => {
                 <div className='border-t-2'>
                   <ul>
                     {collectionShopify?.products?.nodes.map((product, index) => (
-                      <li key={product.id} className={`flex sm:justify-between border-b-2 py-2 flex-col ${(index + 1) % 2 === 0 ? 'sm:flex-row-reverse' : 'sm:flex-row'} `}>
+                      <li key={index} className={`flex sm:justify-between border-b-2 py-2 flex-col ${(index + 1) % 2 === 0 ? 'sm:flex-row-reverse' : 'sm:flex-row'} `}>
                         <div className="relative">
-                            <img alt={product.title} src={product.variants.nodes[0].image.url}  className='sm:max-w-[550px] m-auto cursor-zoom-in' onClick={() => {setModalZoomed(true); setImageSelected(product.variants.nodes[0].image.url)}}/>
-                            <div className={`absolute top-4 flex items-center justify-center bg-white p-2 rounded-[50%] shadow-2xl cursor-zoom-in ${(index + 1) % 2 === 0 ? 'left-4' : 'right-4'}`} onClick={() => {setModalZoomed(true); setImageSelected(product.variants.nodes[0].image.url)}}>
+                            <img alt={product.title} src={product.variants.nodes[0].image.url}  className='sm:max-w-[550px] m-auto'/>
+                            <div className={`absolute top-4 flex items-center justify-center bg-white p-2 rounded-[50%] shadow-2xl transition-all cursor-zoom-in hover:scale-125 ${(index + 1) % 2 === 0 ? 'left-4' : 'right-4'}`} onClick={() => {setModalZoomed(true); setImageSelected(product.variants.nodes[0].image.url)}}>
                               <AiOutlineZoomIn className=" text-[28px] text-black"/>
                             </div>
                         </div>
@@ -76,11 +77,21 @@ const Collection = () => {
                   </ul>
                 </div>
                 {modalZoomed && <ZoomModal status={modalZoomed} changeStatus={setModalZoomed} img={imgSelected}/>}
+                <SEO
+                  title={collectionShopify?.title}
+                  titleTemplate='Rancho Guadalupe'
+                  titleSeparator=' - '
+                  description='Rancho Guadalupe es esto y esto y esto...'
+                  pathname={window.location.href}
+                  siteLanguage='es'
+                  siteLocale='ES'
+                  twitterUsername='@ranchoguadaluperg'
+                />
             </>
         ) : (
           <div className='h-[80vh] flex items-center justify-center'><FaSpinner className='text-[3em] animate-spin text-primary '/></div>
-        )}
-    </div>
+          )}
+    </div> 
   )
 }
 

@@ -20,7 +20,7 @@ const SidebarLinks = ({link}) => {
 
   return (
     <li
-      key={link.id}
+      key={link.title}
       className={`relative w-[200px] flex justify-center ${!submenuActive && 'border-b-2 border-b-white'}`}
     >
       <Link to={!link.categories && link.link} className="block w-full" onClick={() => {if(!link.categories){setSidebar(prev => !prev)}}}>
@@ -32,7 +32,7 @@ const SidebarLinks = ({link}) => {
         {submenuActive && link.categories && 
           <ul className='relative z-[2] bg-primary my-4 left-0 animate-fadeIn w-full min-w-[200px] border'>
             {link.categories.map(categorie => (
-              <li id={categorie.id} className="text-center text-[18px] border-b-2 text-white border-b-white">
+              <li key={categorie.id} className="text-center text-[18px] border-b-2 text-white border-b-white">
                 <Link to={categorie.link} className="block px-6 py-3 w-full" onClick={() => setSidebar(prev => !prev)}>{categorie.categorie}</Link>
               </li>
             ))}
@@ -40,6 +40,7 @@ const SidebarLinks = ({link}) => {
         }
 
       </Link>
+
     </li>
   )
 }

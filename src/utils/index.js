@@ -175,6 +175,8 @@ export const collectionQuery = gql`
         nodes {
           id
           title
+          vendor
+          productType
           description
           publishedAt
           handle
@@ -202,3 +204,23 @@ export const collectionQuery = gql`
     }
   }
 `;
+
+export const collectionsQuery = gql`
+  query Collections($first: Int!)
+  {
+    collections(first: 2) {
+      edges {
+        node {
+          id
+          products(first: 5) {
+            edges {
+              node {
+                id
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+` 

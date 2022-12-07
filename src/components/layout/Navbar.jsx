@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import {logoWhite} from '../../assets/index';
 import { navLinks } from '../../constants';
-import { IoIosArrowDown } from 'react-icons/io'
+import { IoIosArrowDown, IoLogoWhatsapp } from 'react-icons/io'
 import { HiMenu } from 'react-icons/hi';
 import { useStateContext } from '../../contexts/ContextApp';
 import styles from '../../style';
@@ -13,27 +13,37 @@ const MenuLinks = ({link}) => {
 
   return (
     <li 
-      key={link.id} 
+      key={link.title} 
       className={`relative ${styles.hoverLink}`}
       onMouseEnter={() => setSubmenuActive(true)} 
       onMouseLeave={() => setSubmenuActive(false)}
     >
-      <Link to={!link.categories && link.link} className="block px-6 py-3 ">
+      {!link.categories ? (
 
-        <span className='flex items-center gap-2'>
-          {link.title}{link.categories && <IoIosArrowDown className={`transition-all ${submenuActive && '-rotate-180'}`}/>}
-        </span>
-
-        {submenuActive && link.categories && 
-          <ul className='absolute top-[100%] left-0 w-full shadow-2xl'>
-            {link.categories.map(categorie => (
-              <li key={categorie.id}>
-                <Link to={categorie.link} className="block text-center px-2 py-3 w-full bg-orange-300 hover:brightness-90">{categorie.categorie}</Link>
-              </li>
-            ))}
-          </ul>
-        }
+        <Link to={link.link} className="block px-6 py-3 "> 
+          <span className='flex items-center gap-2'>
+            {link.title}
+          </span>
         </Link>
+      
+      ) : (
+
+        <div className='block px-6 py-3'>
+          <span className='flex items-center gap-2'>
+            {link.title} <IoIosArrowDown className={`transition-all ${submenuActive && '-rotate-180'}`}/>
+          </span>
+
+          {submenuActive && link.categories && 
+            <ul className='absolute top-[100%] left-0 w-full shadow-2xl'>
+              {link.categories.map(categorie => (
+                <li key={categorie.id}>
+                  <Link to={categorie.link} className="block text-center px-2 py-3 w-full bg-orange-300 hover:brightness-90">{categorie.categorie}</Link>
+                </li>
+              ))}
+            </ul>
+          }
+        </div>
+      )}
     </li>
   )
 }
@@ -57,7 +67,6 @@ const Navbar = () => {
       setScroll(true);
     } else {
       setScroll(false);
-
     }
   }
 
@@ -85,10 +94,12 @@ const Navbar = () => {
         </div>
 
         <div className={`hidden ${scroll ? 'flex-row gap-3 items-center' : 'flex-col'} sm:flex text-dimWhite transition-all duration-700`}>
-          <span className='text-[14px] text-right'>Contáctanos</span>
-          <a href="tel:604123456789" className='hover:text-white'>604 123 4567</a>
-          {scroll && <span>|</span>}
-          <a href="tel:3202871949" className='hover:text-white'>320 287 1949</a>
+          <span className={`${scroll ? 'text-[18px]' : 'text-[22px]'} text-right flex items-center gap-2`}><IoLogoWhatsapp className='fill-green-500'/> Contáctanos</span>
+          <div className='flex items-center gap-2'>
+          <a href="https://wa.me/573104619699" target="_blank" rel='no-refferer' className='hover:text-white text-right'>310 461 9699</a>
+          <span>|</span>
+          <a href="https://wa.me/573217993894" target="_blank" rel='no-refferer' className='hover:text-white text-right'>321 799 3894</a>
+          </div>
         </div>
 
         <span className="text-[40px] sm:hidden flex text-white" onClick={() => setSidebar((prev) => !prev)}><HiMenu /></span>

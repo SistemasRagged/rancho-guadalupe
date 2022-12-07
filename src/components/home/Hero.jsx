@@ -1,20 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from '../../style'
-import {AiOutlineArrowDown} from 'react-icons/ai'
 import { hero } from '../../assets'
+import { productQuery, storefront } from '../../utils'
 
-const SeeMore = () => (
-  <a href="#features" className={`${styles.flexCenter} w-[140px] h-[140px] rounded-full bg-primary p-[2px] cursor-pointer hidden md:block`}>
-    <div className={`${styles.flexCenter} flex-col gap-2 text-white transition-colors hover:brightness-90 duration-300 bg-primary w-[100%] h-[100%] rounded-full`}>
-      <p className="font-primary font-medium text-[18px] leading-[23px]">
-        Ver más
-      </p>
-      <span className="text-[23px]"><AiOutlineArrowDown /></span>
-    </div>
-  </a>
-)
+const Hero = () => {
 
-const Hero = () => (
+  const [heroShopify, setHeroShopify] = useState([])
+
+  const getHeros = async () => {
+    const {data} =  await storefront(productQuery, {handle: 'hero'});
+    setHeroShopify(data.product.media.nodes);
+    console.log(data.product);  
+  }
+
+  useEffect(() => {
+    getHeros();
+  }, [])
+
+
+  return (
     <section className={`${styles.boxWidth} flex md:flex-row flex-col`}>
         <div className={`flex-1 ${styles.flexStart} flex-col xl:px-0 px-6`}>
 
@@ -23,10 +27,8 @@ const Hero = () => (
               Lorem <br className='sm:block hidden'/> {" "}
               <span className='text-gradient'>Impsum</span> {" "}
             </h1>
-            {/* <div className='ss:flex hidden md:mr-4 mr-0'>
-              <SeeMore />
-            </div> */}
           </div>
+
           <h1 className='font-primary font-semibold ss:text-[68px] text-[52px] text-black ss:leading-[100px] leading-[75px] w-full'>Dolore Consequat</h1>
           <p className={`${styles.paragraph} max-w-[470px] mt-5`}>Duis aute sit labore duis proident amet esse labore reprehenderit esse aliquip commodo ipsum proident. Culpa anim non nisi velit Lorem nisi nulla mollit laborum eu sit aliqua aliqua. Ut nostrud elit eu aute adipisicing.</p>
         </div>
@@ -35,11 +37,10 @@ const Hero = () => (
           <img src={hero} alt="Billing"  className='w-[100%] xl:h-[100%] h-[100%] object-contain shadow-2xl rounded-xl'/>
         </div>
 
-        <div className={`ss:hidden ${styles.flexCenter}`}>
-          <SeeMore />
-        </div>
     </section>
-)
+    )
+}
+
 
 
 export default Hero

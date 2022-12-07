@@ -2,6 +2,7 @@
 export {default as instagram} from './redes/instagram.svg';
 export {default as youtube} from './redes/youtube.svg';
 export {default as facebook} from './redes/facebook.svg';
+export {default as tiktok} from './redes/tiktok.svg';
 
 //*** CARPETA DE ICONOS DE FEATURES ***/
 export {default as star} from './features/star.svg';
