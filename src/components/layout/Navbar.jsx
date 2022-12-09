@@ -6,10 +6,23 @@ import { IoIosArrowDown, IoLogoWhatsapp } from 'react-icons/io'
 import { HiMenu } from 'react-icons/hi';
 import { useStateContext } from '../../contexts/ContextApp';
 import styles from '../../style';
+import { collectionsQuery, storefront } from '../../utils';
 
 const MenuLinks = ({link}) => {
 
   const [submenuActive, setSubmenuActive] = useState(false);
+
+  const [collections, setCollections] = useState([]);
+
+  const getCollections = async () => {
+    const { data } = await storefront(collectionsQuery, {first: 10});
+    setCollections(data.collections.edges);
+    console.log(data.collections);
+  }
+
+  useEffect(()=> {
+    getCollections();
+  }, [])
 
   return (
     <li 
@@ -35,9 +48,14 @@ const MenuLinks = ({link}) => {
 
           {submenuActive && link.categories && 
             <ul className='absolute top-[100%] left-0 w-full shadow-2xl'>
-              {link.categories.map(categorie => (
+              {/* {link.categories.map(categorie => (
                 <li key={categorie.id}>
                   <Link to={categorie.link} className="block text-center px-2 py-3 w-full bg-orange-300 hover:brightness-90">{categorie.categorie}</Link>
+                </li>
+              ))} */}
+              {collections.filter(collection => collection.node.title !== 'RECURSOS WEB' && collection.node.title !== "EVENTOS").sort(clc => clc.node.title).map(collection => (
+                <li key={collection.node.id}>
+                  <Link to={`/categoria/${collection.node.handle}`} className="block text-center px-2 py-3 w-full bg-orange-300 hover:brightness-90 capitalize">{collection.node.title.toLowerCase()}</Link>
                 </li>
               ))}
             </ul>

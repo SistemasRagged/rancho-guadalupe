@@ -4,6 +4,7 @@ import {aboutUsBanner, aboutUs1, aboutUs2} from '../../assets/'
 import PrismaZoom from 'react-prismazoom'
 import {IoMdClose} from 'react-icons/io';
 import {AiOutlineZoomIn} from 'react-icons/ai'
+import { productQuery, storefront } from '../../utils';
 
 const ZoomModal = ({status, changeStatus, img}) => {
 
@@ -29,11 +30,40 @@ const ZoomModal = ({status, changeStatus, img}) => {
   )
 }
 
+const ArticleAboutUs = ({text, img, index, toggleModal, toggleImg}) => {
+  
+  return (
+    <article className={`my-3 md:my-8 flex flex-col gap-4 md:gap-12 ${index % 2 !== 0 ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
+      <p className='text-[18px] md:text-[23px] leading-[31px] font-secondary'>
+        {text}
+      </p>
+      <div className={`relative sm:hover:scale-95 ${index % 2 !== 0 ? 'sm:hover:-rotate-[2deg]' : 'sm:hover:rotate-[2deg]'} transition-all duration-300`}>
+        <img src={img} alt="Imagen sobre nosotros" className='shadow-2xl sm:max-w-[500px] m-auto object-contain cursor-zoom-in' onClick={() => {toggleModal(true); toggleImg(img); console.log('click')}}/>
+        <AiOutlineZoomIn className={`absolute text-[28px] top-4 ${index % 2 !== 0 ? 'right-4' : 'left-4'} text-white`}/>
+      </div>
+    </article>
+  )
+}
+
 
 const AboutUs = () => {
 
   const [modalZoomed, setModalZoomed] = useState(false);
   const [imgSelected, setImgSelected] = useState(undefined)
+
+  const [aboutUsImg, setAboutUsImg] = useState([]);
+
+  const getImgAboutUs = async () => {
+    const { data } = await storefront(productQuery, {handle: 'about-us'});
+    setAboutUsImg(data.product.media.nodes)
+    console.log(data.product.media.nodes);
+  }
+
+  useEffect(() => {
+    getImgAboutUs();
+  }, [])
+
+  const texts = ["La Hacienda Rancho Guadalupe está ubicada en Planeta Rica ( Córdoba ) y  fue fundada el 18 de Febrero 2011 por el señor Juan Fernando Arbeláez Gómez; Industrial y comerciante antioqueño con el propósito de desarrollar una línea de Ganado Brahman Rojo de las mayores calidades que ofrece la genética nacional y extranjera. Con el trabajo dedicado al estudio y a los cruce en las líneas del Brahman ha logrado desarrollar excelentes líneas que han producido ejemplares de alta calidad, para así ofrecer al mercado ejemplares para el mejoramiento de otros hatos.", "Rancho Guadalupe está ejerciendo un protagonismo muy importante en las competencias en las que ha participado; teniendo como resultado triunfos en ferias y grandes campeonatos tanto en hembras como en machos. En el trascurso de su crecimiento Rancho Guadalupe ha ejercido una tarea muy importante con sus compradores, dándole así una seguridad en los animales producidos por la ganadería, generando confianza en nuestros clientes. Rancho Guadalupe se ha preocupado por la implementación de Biotecnologías reproductivas, caracterizándose a nivel nacional por ser muy buenos oferentes en novillas rojas de reemplazo en los más importantes remates a nivel nacional."]
 
   return (
     <>
@@ -43,30 +73,9 @@ const AboutUs = () => {
           <h1 className='relative z-[2] text-black text-[45px] md:text-[65px] flex items-center h-[100%] px-4'>Sobre nosotros</h1>
         </div>
         <section className='px-2'>
-          <article className='my-3 md:my-8 flex flex-col md:flex-row gap-4 md:gap-12'>
-            <p className='text-[18px] md:text-[23px] font-secondary'>
-            La Hacienda Rancho Guadalupe está ubicada en Planeta Rica ( Córdoba ) y  fue fundada el 18 de Febrero 2011 por el señor Juan Fernando Arbeláez Gómez; Industrial y comerciante antioqueño con el propósito de desarrollar una línea de Ganado Brahman Rojo de las mayores calidades que ofrece la genética nacional y extranjera. Con el trabajo dedicado al estudio y a los cruce en las líneas del Brahman ha logrado desarrollar excelentes líneas que han producido ejemplares de alta calidad, para así ofrecer al mercado ejemplares para el mejoramiento de otros hatos. 
-            </p>
-            <div className="relative sm:hover:scale-95 sm:hover:rotate-[2deg] transition-all duration-300">
-              <img src={aboutUs1} alt="" className='shadow-2xl sm:max-w-[500px] m-auto object-contain cursor-zoom-in' onClick={() => {setModalZoomed(true); setImgSelected(aboutUs1)}}/>
-              <AiOutlineZoomIn className="absolute text-[28px] top-4 left-4 text-white"/>
-            </div>
-          </article>
-          <article className='my-3 md:my-8 flex flex-col md:flex-row-reverse gap-4 md:gap-12'>
-            <p className='text-[18px] md:text-[22px] font-secondary'>
-              Rancho Guadalupe está ejerciendo un protagonismo muy importante en las competencias en las que ha participado; teniendo como resultado triunfos en ferias y grandes campeonatos tanto en hembras como en machos. En el trascurso de su crecimiento Rancho Guadalupe ha ejercido una tarea muy importante con sus compradores, dándole así una seguridad en los animales producidos por la ganadería, generando confianza en nuestros clientes. Rancho Guadalupe se ha preocupado por la implementación de Biotecnologías reproductivas, caracterizándose a nivel nacional por ser muy buenos oferentes en novillas rojas de reemplazo en los más importantes remates a nivel nacional.
-            </p>
-            <div className="relative sm:hover:scale-95 sm:hover:-rotate-[2deg] transition-all duration-300">
-              <img src={aboutUs2} alt="" className='shadow-2xl sm:max-w-[500px] m-auto object-contain cursor-zoom-in' onClick={() => {setModalZoomed(true); setImgSelected(aboutUs2)}}/>
-              <AiOutlineZoomIn className="absolute text-[28px] top-4 right-4 text-white"/>
-            </div>
-          </article>
-          {/* <article className='my-3 md:my-8 flex flex-col md:flex-row gap-4 md:gap-12'>
-            <p className='text-[18px] md:text-[24px] font-secondary'>
-              Rancho Guadalupe es la muestra de que con un trabajo serio, profesional y con procesos bien estructurados se pueden lograr excelentes resultados en un relativo corto tiempo, Hemos obtenido importantes distinciones como grandes campeonatos y/o campeonatos reservados en ferias exposiciones con los siguientes ejemplares:
-            </p>
-            <img src={aboutUs} alt="" className='shadow-2xl sm:max-w-[500px] m-auto object-contain hover:scale-95 hover:rotate-[2deg] transition-all duration-300'/>
-          </article> */}
+          {aboutUsImg.map((img, index) => (
+            <ArticleAboutUs text={texts[index]} img={img.image.url} index={index} toggleModal={setModalZoomed} toggleImg={setImgSelected}/>
+          ))}
         </section>
       </main>
       {modalZoomed && <ZoomModal status={modalZoomed} changeStatus={setModalZoomed} img={imgSelected}/>}

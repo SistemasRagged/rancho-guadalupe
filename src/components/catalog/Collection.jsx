@@ -45,7 +45,6 @@ const Collection = () => {
   const getCollection = async () => {
     const { data } = await storefront(collectionQuery, {handle:collection});
     setCollectionShopify(data.collection);
-    console.log(data.collection);
   }
 
   useEffect(() => {

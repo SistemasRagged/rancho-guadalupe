@@ -44,9 +44,11 @@ const Events = () => {
                         <div className={`${(index + 1) % 2 === 0 ? 'sm:pr-6' : 'sm:pl-6'} my-2 sm:my-0 w-[100%] h-[100%]`}>
                           <h1 className='text-[24px] font-secondary font-bold'>{product.title}</h1>
                           <p className='font-secondary'>{description}</p>
-                          <a href={wspGroup} target="_blank" rel="no-referrer" className="px-4 py-2 my-2 bg-green-600 mr-2 inline-block text-white hover:brightness-95">{wspGroup}</a>
-                          <a href={pdfLink} target="_blank" rel="no-referrer" className="px-4 py-2 my-2 bg-red-600 mx-2 inline-block text-white hover:brightness-95">{pdfLink}</a>
-                          <Link to={`/productos/${product.handle}`} className="px-4 py-2 my-2 bg-secondary mx-2 inline-block text-white hover:brightness-95">Ver más</Link>
+                          <div className='flex items-center gap-2 flex-wrap my-2'>
+                            <a href={wspGroup} target="_blank" rel="no-referrer" className="px-4 py-2 bg-green-600 inline-block text-white hover:brightness-95">{wspGroup}</a>
+                            <a href={pdfLink} target="_blank" rel="no-referrer" className="px-4 py-2 bg-red-600 inline-block text-white hover:brightness-95">{pdfLink}</a>
+                            <Link to={`/productos/${product.handle}`} className="px-4 py-2 bg-secondary inline-block text-white hover:brightness-95">Ver más</Link>
+                          </div>
                         </div>
                       </li>
                     )})}

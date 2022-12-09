@@ -208,17 +208,13 @@ export const collectionQuery = gql`
 export const collectionsQuery = gql`
   query Collections($first: Int!)
   {
-    collections(first: 2) {
+    collections(first: $first) {
       edges {
         node {
           id
-          products(first: 5) {
-            edges {
-              node {
-                id
-              }
-            }
-          }
+          title
+          description
+          handle
         }
       }
     }
