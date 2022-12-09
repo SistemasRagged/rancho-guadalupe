@@ -57,6 +57,11 @@ export const navLinks = [
       id:'eventos',
       link:'/eventos',
       title:'Eventos',
+    },
+    {
+      id: 'feed',
+      link: '/galeria',
+      title: 'Galeria'
     }
 ]
 

@@ -51,8 +51,6 @@ const Footer = () => (
         ))}
       </div>
     </div>
-    <script src="https://snapwidget.com/js/snapwidget.js"></script>
-    <iframe src="https://snapwidget.com/embed/1018776" class="snapwidget-widget border-0 overflow-x-hidden w-full min-h-[75em]" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
     </div>
 
   </footer>

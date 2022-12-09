@@ -106,8 +106,8 @@ const Navbar = () => {
       <div className={`${styles.boxWidth} relative z-[2] flex items-center justify-between`}>
         <div className='flex items-center'>
           <Link to="/" className='flex items-center'>
-            <img src={logoWhite} alt="Logo" className={`${scroll ? 'w-[50px]' : 'w-[100px]'} object-contain transition-all duration-700`}/>
-            <h1 className={`text-xl ${scroll ? 'sm:text-2xl' : 'sm:text-4xl'} ml-4 font-primary text-white font-semibold transition-all duration-500`}>Rancho Guadalupe</h1>
+            <img src={logoWhite} alt="Logo" className={`${scroll ? 'w-[75px]' : 'w-[100px]'} object-contain transition-all duration-700`}/>
+            <h1 className={`hidden md:block text-xl ${scroll ? 'sm:text-2xl' : 'sm:text-4xl'} ml-4 font-primary text-white font-semibold transition-all duration-500`}>Rancho Guadalupe</h1>
           </Link>
         </div>
 

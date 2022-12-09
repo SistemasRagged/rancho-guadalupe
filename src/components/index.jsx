@@ -15,6 +15,7 @@ export {default as Features} from './home/Features';
 export {default as AboutUs} from './home/AboutUs';
 export {default as Ubication} from './home/Ubication'
 export {default as Events} from './home/Events'
+export {default as Gallery} from './home/Gallery'
 
 //* Products
 
