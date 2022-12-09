@@ -5,12 +5,24 @@ import {MdOutlineClose} from 'react-icons/md'
 import { navLinks } from '../../constants';
 import { Link } from 'react-router-dom';
 import { IoIosArrowDown } from 'react-icons/io';
+import { collectionsQuery, storefront } from '../../utils';
 
 const SidebarLinks = ({link}) => {
 
   const {sidebar, setSidebar} = useStateContext();
 
   const [submenuActive, setSubmenuActive] = useState(false);
+
+  const [collections, setCollections] = useState([]);
+
+  const getCollections = async () => {
+    const { data } = await storefront(collectionsQuery, {first: 10});
+    setCollections(data.collections.edges);
+  }
+
+  useEffect(()=> {
+    getCollections();
+  }, [])
 
   useEffect(() => {
     if (!sidebar){
@@ -31,11 +43,17 @@ const SidebarLinks = ({link}) => {
 
         {submenuActive && link.categories && 
           <ul className='relative z-[2] bg-primary my-4 left-0 animate-fadeIn w-full min-w-[200px] border'>
-            {link.categories.map(categorie => (
+            {/* {link.categories.map(categorie => (
               <li key={categorie.id} className="text-center text-[18px] border-b-2 text-white border-b-white">
                 <Link to={categorie.link} className="block px-6 py-3 w-full" onClick={() => setSidebar(prev => !prev)}>{categorie.categorie}</Link>
               </li>
+            ))} */}
+            {collections.filter(collection => collection.node.title !== 'RECURSOS WEB' && collection.node.title !== "EVENTOS").sort(clc => clc.node.title).map(collection => (
+              <li key={collection.node.id} className="text-center text-[18px] border-b-2 text-white border-b-white">
+                <Link to={`/categoria/${collection.node.handle}`} className="block px-6 py-3 w-full capitalize" onClick={() => setSidebar(prev => !prev)}>{collection.node.title.toLowerCase()}</Link>
+              </li>
             ))}
+
           </ul>
         }
 
