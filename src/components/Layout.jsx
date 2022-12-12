@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
-import {Navbar, Footer, Sidebar} from './index'
+import {Navbar, Footer, Sidebar, SocialSide} from './index'
 import { BsArrowUpSquareFill } from 'react-icons/bs'
 
 
@@ -27,6 +27,7 @@ const Layout = () => {
   return (
     <Fragment>
         <Navbar />
+        <SocialSide />
         <Sidebar />
           <Outlet />
         <Footer />

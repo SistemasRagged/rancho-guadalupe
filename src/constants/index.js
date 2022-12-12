@@ -136,24 +136,28 @@ export const footerLinks = [
 
 export const socialMedia = [
   {
-    id: "social-media-1",
+    id: "Instagram",
     icon: instagram,
     link: "https://www.instagram.com/rancho.guadalupe/",
+    hex: '#F70063'
   },
   {
-    id: "social-media-2",
+    id: "Facebook",
     icon: facebook,
     link: "https://www.facebook.com/ranchoguadaluperg",
+    hex:'#1977F3'
   },
   {
-    id: "social-media-3",
+    id: "Youtube",
     icon: youtube,
     link: "https://www.youtube.com/channel/UCeGbP1uGmvR5xLJPJY2BnOQ",
+    hex:'#FE0000'
   },
   {
-    id: "social-media-4",
+    id: "TikTok",
     icon: tiktok,
-    link: 'https://www.tiktok.com/@rancho.guadalupe'
+    link: 'https://www.tiktok.com/@rancho.guadalupe',
+    hex:'#000000'
   }
 ];
 

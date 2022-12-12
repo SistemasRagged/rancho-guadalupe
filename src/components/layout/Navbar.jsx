@@ -42,17 +42,12 @@ const MenuLinks = ({link}) => {
       ) : (
 
         <div className='block px-6 py-3'>
-          <span className='flex items-center gap-2'>
+          <span className='flex items-center gap-2 cursor-default'>
             {link.title} <IoIosArrowDown className={`transition-all ${submenuActive && '-rotate-180'}`}/>
           </span>
 
           {submenuActive && link.categories && 
             <ul className='absolute top-[100%] left-0 w-full shadow-2xl'>
-              {/* {link.categories.map(categorie => (
-                <li key={categorie.id}>
-                  <Link to={categorie.link} className="block text-center px-2 py-3 w-full bg-orange-300 hover:brightness-90">{categorie.categorie}</Link>
-                </li>
-              ))} */}
               {collections.filter(collection => collection.node.title !== 'RECURSOS WEB' && collection.node.title !== "EVENTOS").sort(clc => clc.node.title).map(collection => (
                 <li key={collection.node.id}>
                   <Link to={`/categoria/${collection.node.handle}`} className="block text-center px-2 py-3 w-full bg-orange-300 hover:brightness-90 capitalize">{collection.node.title.toLowerCase()}</Link>
