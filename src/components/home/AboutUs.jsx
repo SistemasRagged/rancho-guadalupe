@@ -5,6 +5,7 @@ import PrismaZoom from 'react-prismazoom'
 import {IoMdClose} from 'react-icons/io';
 import {AiOutlineZoomIn} from 'react-icons/ai'
 import { productQuery, storefront } from '../../utils';
+import SEO from 'react-seo-component';
 
 const ZoomModal = ({status, changeStatus, img}) => {
 
@@ -79,6 +80,17 @@ const AboutUs = () => {
         </section>
       </main>
       {modalZoomed && <ZoomModal status={modalZoomed} changeStatus={setModalZoomed} img={imgSelected}/>}
+      <SEO
+          title="Sobre nosotros"
+          titleTemplate='Rancho Guadalupe'
+          titleSeparator=' - '
+          description="Esta es nuestra historia, aqui nace nuestra marca y nuestro camino a ser los mejores en calidad y genetica"
+          pathname={window.location.href}
+          image={''}
+          siteLanguage='es'
+          siteLocale='ES'
+          twitterUsername='@ranchoguadaluperg'
+        />
     </>
     
   )

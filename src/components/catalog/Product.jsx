@@ -88,12 +88,11 @@ const Product = () => {
                 <h3 className='font-primary font-semibold text-lg text-primary/80 brightness-50 uppercase'>{product.vendor}</h3>
                 <div id="links" className="flex items-center gap-3 w-[100%] mt-4">
                   <a className='w-[100%] text-center bg-[#1e9c4c] hover:bg-[#17773a] transition-all duration-300 py-4 flex justify-center items-center gap-2 text-white text-[18px] uppercase font-primary' href={`https://api.whatsapp.com/send/?phone=${buy.phone}&text=${buy.message}${product.title.replaceAll(" ", "+")}&type=phone_number&app_absent=0`} target="_blank"><BsWhatsapp className='text-[24px]'/> Ir a whatsapp</a>
-                  {/* <Link title="Volver" className='w-[10%] text-center text-secondary hover:brightness-90 transition-all duration-300 py-4 flex justify-center items-center gap-2 text-[18px] uppercase font-primary' to={`/productos?product=${handle}`}><BsFillArrowLeftCircleFill className='text-[24px]'/></Link> */}
                 </div>
                 <div className='my-5 w-[100%]'>
                   <Accordion title="Descripcion" content={product.description} checked={true}/>
-                  <Accordion title="Envios" content={buy.send}/>
-                  <Accordion title="Calidad" content={buy.quality}/>
+                  {/* <Accordion title="Envios" content={buy.send}/>
+                  <Accordion title="Calidad" content={buy.quality}/> */}
                 </div>
             </div>
         </div>

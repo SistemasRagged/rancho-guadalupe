@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import styles from '../../style'
 import { storefront,productsQuery, search } from '../../utils'
 import SEO from 'react-seo-component';
@@ -12,8 +12,6 @@ const Products = () => {
   const [prodsSearch, setProdsSearch] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const query = new URLSearchParams(useLocation().search);
-
   const getProducts = async () => {
     setLoading(true);
     const {data} =  await storefront(productsQuery, {first: 50});
@@ -21,10 +19,6 @@ const Products = () => {
     setProdsSearch(data.products.edges);
     console.log(data.products.edges);  
     setLoading(false);
-    const productId = query.get('product');
-    if (productId !== null) {
-      document.getElementById(productId).scrollIntoView();
-    }
   }
 
   useEffect(() => {
