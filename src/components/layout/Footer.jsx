@@ -12,7 +12,7 @@ const Footer = () => (
         <p className={`${styles.paragraph} text-dimWhite mt-4 max-w-[310px]`}>Exercitation pariatur labore nisi proident sunt non irure est dolore mollit.</p>
       </div>
 
-      <div className="flex-[2.5] w-full flex flex-row justify-center xs:justify-between flex-wrap md:mt-0 mt-10">
+      {/* <div className="flex-[2.5] w-full flex flex-row justify-center xs:justify-between flex-wrap md:mt-0 mt-10">
         {footerLinks.map((footerLink) => (
           <div key={footerLink.id} className="flex flex-col ss:my-6 my-4 min-w-[150px]">
 
@@ -28,12 +28,12 @@ const Footer = () => (
 
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
 
     <div className="w-full flex justify-between items-center md:flex-row flex-col pt-6 border-t-[1px] border-t-[#3F3E45]">
       <p className="font-primary font-normal text-center text-dimWhite text-[18px] leading-[27px]"> 
-        2022 Rancho Guadalupe. All Rights Reserved.
+        {new Date().getFullYear()} Rancho Guadalupe. All Rights Reserved. &copy;
       </p>
       <div className="flex flex-row md:mt-0 mt-6">
         {socialMedia.map((social, index) => (
