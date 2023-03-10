@@ -28,7 +28,7 @@ const Banners = () => {
 
 
   return (
-    <section id="banners" className={`${styles.boxWidth} xl:px-0 md:px-0 md:my-6 h-[80vh] md:h-[100vh] xl:h-[80vh]`}>
+    <section id="banners" className={`${styles.boxWidth} xl:px-0 md:px-0 md:my-6 h-auto md:h-[100vh] xl:h-[80vh]`}>
         <Swiper
             style={{ "--swiper-navigation-color": "#5F0010", "--swiper-pagination-color": "#5F0010"}}
             modules={[Navigation, Pagination, Autoplay]}
@@ -45,7 +45,7 @@ const Banners = () => {
             {bannersShopify.map(banner => (
                 <SwiperSlide 
                     key={banner.id}
-                    className="h-[80vh] md:h-[100vh] xl:h-[80vh] flex items-center justify-center"
+                    className="h-auto md:h-[100vh] xl:h-[80vh] flex items-center justify-center"
                 >
                     <div className='absolute text-[3em] animate-spin text-primary'><FaSpinner /></div>
                     {banner.mediaContentType === 'IMAGE' ? (
