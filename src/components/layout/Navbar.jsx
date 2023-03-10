@@ -17,7 +17,6 @@ const MenuLinks = ({link}) => {
   const getCollections = async () => {
     const { data } = await storefront(collectionsQuery, {first: 10});
     setCollections(data.collections.edges);
-    console.log(data.collections);
   }
 
   useEffect(()=> {
@@ -50,7 +49,7 @@ const MenuLinks = ({link}) => {
             <ul className='absolute top-[100%] left-0 w-full shadow-2xl'>
               {collections.filter(collection => collection.node.title !== 'RECURSOS WEB' && collection.node.title !== "EVENTOS").sort(clc => clc.node.title).map(collection => (
                 <li key={collection.node.id}>
-                  <Link to={`/categoria/${collection.node.handle}`} className="block text-center px-2 py-3 w-full bg-orange-300 hover:brightness-90 capitalize">{collection.node.title.toLowerCase()}</Link>
+                  <Link to={`/categoria/${collection.node.handle}`} className="block text-center px-1 py-[10px] w-full bg-orange-300 hover:brightness-90 capitalize">{collection.node.title.toLowerCase()}</Link>
                 </li>
               ))}
             </ul>

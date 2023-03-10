@@ -21,9 +21,8 @@ const FeatureCard = ({icon, title, content, index}) => (
 const Features = () => (
   <section className={`${styles.boxWidth} ${styles.padding} ${styles.paddingY} flex flex-col md:flex-row xl:px-0`} id="features">
     <div className={layout.sectionInfo}>
-      <h2 className={styles.heading2}>Lorem ipmsum, <br className="sm:block hidden"/> pariatur labore proident.</h2>
-      <p className={`${styles.paragraph} max-w-[470px] mt-5`}>Adipisicing ut quis ex incididunt id laborum laborum labore id sit occaecat. Esse in esse sint tempor. Laboris irure do excepteur nostrud eu id.</p>
-      {/* <Button styles="mt-10" title="Get Started"/> */}
+      <h2 className={styles.heading2}>Nuestras donadoras y reproductores con su Rojo Guadalupe</h2>
+      <p className={`${styles.paragraph} max-w-[470px] mt-5 ss:text-[24px]`}>Animales mejorados geneticamente para contribuir al mejoramiento de su ganaderia.</p>
     </div>
     <div className={`${layout.sectionImg} flex-col`}>
       {features.map((feature, index) => (

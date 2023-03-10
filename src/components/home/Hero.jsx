@@ -28,14 +28,12 @@ const Hero = () => {
         <div className={`flex-1 ${styles.flexStart} flex-col xl:px-0 px-6`}>
 
           <div className='flex flex-row justify-between items-center w-full'>
-            <h1 className='flex-1 font-primary font-semibold ss:text-[72px] text-[52px] text-black ss:leading-[100px] leading-[75px]'>
-              Lorem <br className='sm:block hidden'/> {" "}
-              <span className='text-gradient'>Impsum</span> {" "}
+            <h1 className='flex-1 font-primary font-semibold ss:text-[76px] text-[56px] text-black ss:leading-[100px] leading-[75px]'>
+            Bienvenidos al <span className='text-primary'>Rojo</span> Guadalupe
             </h1>
           </div>
 
-          <h1 className='font-primary font-semibold ss:text-[68px] text-[52px] text-black ss:leading-[100px] leading-[75px] w-full'>Dolore Consequat</h1>
-          <p className={`${styles.paragraph} max-w-[470px] mt-5`}>Duis aute sit labore duis proident amet esse labore reprehenderit esse aliquip commodo ipsum proident. Culpa anim non nisi velit Lorem nisi nulla mollit laborum eu sit aliqua aliqua. Ut nostrud elit eu aute adipisicing.</p>
+          <p className={`${styles.paragraph} max-w-[470px] mt-5 ss:text-[24px]`}>Somos una hacienda dedicada al mejoramiento génetico continuo con los más altos estandares de calidad.</p>
         </div>
 
         <div className={`flex-1 flex ${styles.flexCenter} md:my-0 my-10 relative px-6 md:px-0`}>

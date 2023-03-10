@@ -24,6 +24,7 @@ const Events = () => {
         {events ? (
             <>
                 <h1 className='text-[36px]'>{events?.title}</h1>
+                <h2 className='text-[20px] text-gray-900 mb-2'>{events?.description}</h2>
                 <div className='border-t-2'>
                   <ul>
                     {events?.products?.nodes.map((product, index) => {
@@ -56,10 +57,10 @@ const Events = () => {
                   </ul>
                 </div>
                 <SEO
-                  title="Eventos"
+                  title={events?.title || 'Eventos'}
                   titleTemplate='Rancho Guadalupe'
                   titleSeparator=' - '
-                  description='Rancho Guadalupe es esto y esto y esto...'
+                  description={events?.description || 'Cargando...'}
                   pathname={window.location.href}
                   siteLanguage='es'
                   siteLocale='ES'

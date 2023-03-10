@@ -7,7 +7,7 @@ const SocialSide = () => {
     const [isExpand, setIsExpand] = useState(false);
 
     return (
-        <div className="fixed right-0 bottom-0 md:top-[50%] md:-translate-y-[25%] z-10 ">
+        <div className="fixed left-0 bottom-4 md:bottom-0 md:top-[50%] md:-translate-y-[25%] z-10 ">
             <ul className={`${isExpand ? 'translate-y-0 gap-1' : 'opacity-0 -translate-y-[75%] pointer-events-none'} mx-2 md:mx-0 md:opacity-100 md:translate-y-0 md:pointer-events-auto transition-all duration-500 flex flex-col`}>
                 {socialMedia.map(social => (
                     <li key={social.id} title={social.id} className={``}>

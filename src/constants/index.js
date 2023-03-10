@@ -58,78 +58,38 @@ export const navLinks = [
       link:'/eventos',
       title:'Eventos',
     },
-    {
-      id: 'feed',
-      link: '/galeria',
-      title: 'Galeria'
-    }
+    // {
+    //   id: 'feed',
+    //   link: '/galeria',
+    //   title: 'Galeria'
+    // }
 ]
 
 export const footerLinks = [
   {
     id: 1,
-    title: "Lista #1",
+    title: "Descubrenos ahora",
     links: [
       {
-        name: "Enlace",
-        link: "https://www.hoobank.com/content/",
+        name: "Inicio",
+        link: "/",
       },
       {
-        name: "Enlace",
-        link: "https://www.hoobank.com/how-it-works/",
+        name: "Quienes somos",
+        link: "/nosotros",
       },
       {
-        name: "Enlace",
-        link: "https://www.hoobank.com/create/",
+        name: "Ubicación",
+        link: "/ubicacion",
       },
       {
-        name: "Enlace",
-        link: "https://www.hoobank.com/explore/",
+        name: "Eventos",
+        link: "/eventos",
       },
-      {
-        name: "Enlace",
-        link: "https://www.hoobank.com/terms-and-services/",
-      },
-    ],
-  },
-  {
-    id: 2,
-    title: "Lista #2",
-    links: [
-      {
-        name: "Enlace",
-        link: "https://www.hoobank.com/help-center/",
-      },
-      {
-        name: "Enlace",
-        link: "https://www.hoobank.com/partners/",
-      },
-      {
-        name: "Enlace",
-        link: "https://www.hoobank.com/suggestions/",
-      },
-      {
-        name: "Enlace",
-        link: "https://www.hoobank.com/blog/",
-      },
-      {
-        name: "Enlace",
-        link: "https://www.hoobank.com/newsletters/",
-      },
-    ],
-  },
-  {
-    id: 3,
-    title: "Lista #3",
-    links: [
-      {
-        name: "Enlace",
-        link: "https://www.hoobank.com/our-partner/",
-      },
-      {
-        name: "Enlace",
-        link: "https://www.hoobank.com/become-a-partner/",
-      },
+      // {
+      //   name: "Galería",
+      //   link: "/galeria",
+      // },
     ],
   },
 ];
@@ -165,29 +125,29 @@ export const features = [
   {
     id: "feature-1",
     icon: star,
-    title: "Feature #1",
+    title: "Donadoras",
     content:
-      "Adipisicing occaecat ea est eiusmod elit minim.",
+      "Nuestras donadoras han sido madres sobresalientes por ASOCEBÚ y son de lineas geneticas abiertas, lo cual es ideal para el buen desarrollo genetico en sus ganaderias.",
   },
   {
     id: "feature-2",
     icon: shield,
-    title: "Feature #2",
+    title: "Toros",
     content:
-      "Quis amet ipsum ad sit ullamco dolor anim enim sit.",
+      "Nuestros toros son toros con las mejores genomicas han sido campeones en distintas ferias de territorio nacional. Todos puestos ha disposición para el mejoramiento genetico de sus hatos.",
   },
   {
     id: "feature-3",
     icon: send,
-    title: "Feature #3",
+    title: "Embriones",
     content:
-      "Culpa reprehenderit cupidatat ipsum elit ex incididunt et commodo adipisicing.",
+      "Los embriones de nuestras vacas son la muestra representativa del rojo guadalupe, a su vez son vacas con las mejores geneticas del país puestas a su disposición para el mejoramiento genetico de sus ganaderías",
   },
 ];
 
 export const buy = {
   send:"Reglas sobre el envio y bla bla bla",
   quality:"Reglas sobre la calidad y bla bla bla",
-  phone:"573202871949",
+  phone:"573217993894",
   message: "👋🏻+Hola+Rancho+Guadalupe,+estoy+interesado+en+saber+más+acerca+de+este+producto:+"
 };
