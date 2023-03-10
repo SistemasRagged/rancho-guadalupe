@@ -27,7 +27,7 @@ const Layout = () => {
   return (
     <Fragment>
         <Navbar />
-        <SocialSide />
+        {/* <SocialSide /> */}
         <Sidebar />
           <Outlet />
         <Footer />

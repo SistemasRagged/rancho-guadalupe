@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import {Layout, Front, Products, Product, NotFound, AboutUs, Ubication, Events, Gallery, Collection} from './components/index';
+import {Layout, Front, Product, NotFound, AboutUs, Ubication, Events, Gallery, Collection} from './components/index';
 
 const App = () => {
 
@@ -12,7 +12,6 @@ const App = () => {
         <Routes>
           <Route exact path="/" element={<Layout />} >
             <Route index element={<Front />} />
-            {/* <Route exact path="/productos" element={<Products />} /> */}
             <Route exact path="/productos/:handle" element={<Product />} />
             <Route exact path="/nosotros" element={<AboutUs />} />
             <Route exact path="/ubicacion" element={<Ubication />} />

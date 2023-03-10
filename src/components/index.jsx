@@ -20,11 +20,9 @@ export {default as Gallery} from './home/Gallery'
 
 //* Products
 
-export {default as Products} from './catalog/Products';
 export {default as Product} from './catalog/Product';
 
 //* Categories
 
-export {default as Reproductores} from './catalog/Reproductores';
 export {default as Collection} from './catalog/Collection';
 

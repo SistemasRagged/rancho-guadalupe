@@ -12,7 +12,6 @@ const Events = () => {
   const getEvents = async () => {
     const { data } = await storefront(collectionQuery, {handle: 'eventos'});
     setEvents(data.collection);
-    console.log(data.collection);
   }
 
   useEffect(() => {
