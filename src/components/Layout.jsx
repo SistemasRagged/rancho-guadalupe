@@ -27,11 +27,11 @@ const Layout = () => {
   return (
     <Fragment>
         <Navbar />
-        {/* <SocialSide /> */}
+        <SocialSide />
         <Sidebar />
           <Outlet />
         <Footer />
-        {scrollUp && <BsArrowUpSquareFill className='fixed bottom-4 ss:bottom-0  z-[2] right-0 text-[3em] m-2 text-primary hover:text-primary/90 transition-all hover:-translate-y-2 cursor-pointer animate-fadeIn' onClick={() => window.scroll({top: 0, left:0, behavior:'smooth'})} />}
+        {scrollUp && <BsArrowUpSquareFill className='fixed bottom-4 ss:bottom-0 z-[2] right-2 ss:right-0 text-[3em] m-2 text-primary hover:text-primary/90 transition-all hover:-translate-y-2 cursor-pointer animate-fadeIn' onClick={() => window.scroll({top: 0, left:0, behavior:'smooth'})} />}
     </Fragment>
   )
 }

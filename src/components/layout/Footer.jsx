@@ -22,13 +22,13 @@ const Footer = () => {
   <footer className={`${styles.flexCenter} ${styles.paddingY} bg-darkPrimary ${styles.paddingX} flex-col`}>
     <div className={styles.boxWidth}>
     <div className={`${styles.flexCenter} md:flex-row flex-col mb-8 w-full`}>
-      <div className="flex-1 flex flex-row md:flex-col gap-10 md:gap-0 justify-start mr-10">
-        <img src={logoWhite} alt="hooBank" className="w-[150px] h-[150px] object-contain" />
-        <p className={`${styles.paragraph} text-dimWhite mt-4 max-w-[310px]`}>Estamos ubicados en planeta Rica, Cordoba.</p>
-        <p className={`${styles.paragraph} text-dimWhite mt-4 max-w-[310px]`}>Estamos dedicados al mejoramiento continuo de la raza Brahman.</p>
+      <div className="flex-1 flex flex-row flex-wrap md:flex-col gap-0 justify-center md:justify-start md:mr-10">
+        <img src={logoWhite} alt="Rancho Guadalupe" title="Logo de Rancho Guadalupe" className="w-[150px] h-[150px] object-contain" />
+        <p className={`${styles.paragraph} text-dimWhite mt-4 max-w-[310px] text-center md:text-start`}>Estamos ubicados en planeta Rica, Cordoba.</p>
+        <p className={`${styles.paragraph} text-dimWhite mt-4 max-w-[310px] text-center md:text-start`}>Estamos dedicados al mejoramiento continuo de la raza Brahman.</p>
       </div>
 
-      <div className="flex-[2.5] w-full flex flex-row justify-center xs:justify-end xs:gap-20 flex-wrap md:mt-0 mt-10">
+      <div className="flex-[2.5] w-full flex flex-col md:flex-row justify-center xs:justify-end xs:gap-20 flex-wrap md:mt-0 mt-5">
         {footerLinks.map((footerLink) => (
           <div key={footerLink.id} className="flex flex-col ss:my-6 my-4 min-w-[150px]">
 

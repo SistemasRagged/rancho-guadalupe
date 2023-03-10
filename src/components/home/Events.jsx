@@ -45,8 +45,8 @@ const Events = () => {
                           <h1 className='text-[24px] font-secondary font-bold'>{product.title}</h1>
                           <p className='font-secondary'>{description}</p>
                           <div className='flex items-center gap-2 flex-wrap my-2'>
-                            <a href={wspGroup} target="_blank" rel="no-referrer" className="px-4 py-2 bg-green-600 inline-block text-white hover:brightness-95">{wspGroup}</a>
-                            <a href={pdfLink} target="_blank" rel="no-referrer" className="px-4 py-2 bg-red-600 inline-block text-white hover:brightness-95">{pdfLink}</a>
+                            <a href={wspGroup} target="_blank" rel="no-referrer" className="px-4 py-2 bg-green-600 inline-block text-white hover:brightness-95">Ingresar al grupo</a>
+                            <a href={pdfLink} target="_blank" rel="no-referrer" className="px-4 py-2 bg-red-600 inline-block text-white hover:brightness-95">Ver PDF</a>
                             <Link to={`/productos/${product.handle}`} className="px-4 py-2 bg-secondary inline-block text-white hover:brightness-95">Ver más</Link>
                           </div>
                         </div>

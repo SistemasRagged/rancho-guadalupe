@@ -171,7 +171,7 @@ export const collectionQuery = gql`
         height
         altText
       }
-      products(first: 8) {
+      products(first: 75) {
         nodes {
           id
           title
