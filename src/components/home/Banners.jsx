@@ -40,7 +40,7 @@ const Banners = () => {
             spaceBetween={0}
             slidesPerView={1}
             navigation
-            autoHeight
+            autoHeight={handle === "banner-mobile" ? true : false}
             pagination={{ clickable: true }}
         >
             {bannersShopify.map(banner => (
